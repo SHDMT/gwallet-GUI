@@ -1,0 +1,105 @@
+<div class="footer clearfix fc12">
+	<div class="footer-l pull-left">
+		<img src="../img/Clouds.png" alt="" class="pull-left">
+		<div class="progress pull-left">
+			<div class="progress-bar unitsync-progress-bar" id="unitsync-progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+				<span class="sr-only">90% 完成（成功）</span>
+			</div>
+		</div>
+		<span class="unitsync-progress-resttime" style="margin-left:8px;">0/0</span>
+	</div>
+	<div class="footer-r pull-right clearfix">
+		<div class="dag-mci pull-left">
+			<img src="../img/Stats.png" title="MCI"/>
+			<span id="dag-mci"></span>
+		</div>
+		<div class="block-height pull-left">
+			<img src="../img/block.png" style="width: 28px;height: 23px;" title="区块高度"/>
+			<span id="block-height"></span>
+		</div>
+		<div class="committee pull-left">
+			<img src="../img/group.png" title="委员会成员"/>
+			<span id="committee"></span>
+		</div>
+		<div class="mining pull-left">
+			<img src="../img/mining.png" title="挖矿速度"/>
+			<span id="mining"></span>
+		</div>
+		<div class="network-state pull-left clearfix" title="网络状态">
+			<span class="pull-right"></span>
+			<span class="pull-right"></span>
+			<span class="pull-right"></span>
+			<span class="pull-right"></span>
+		</div>
+		<div class="user-default pull-left cp" id="user-default">
+			<img src="../img/user.png" alt="" title="用户"/>
+			<span>default</span>
+		</div>
+	</div>
+	<div class="all-user clearfix" id="all-user">
+		<div class="add-box">
+			
+		</div>
+		<div class="user-list clearfix active">
+			<div class="user-info pull-left">
+				<span class="diff-user">default</span>
+			</div>
+			<img src="../img/user.png" class="pull-right" />
+		</div>
+		<div class="add-user">
+			<img src="../img/add-s.png">
+		</div>
+	</div>
+</div>
+
+<!--模态弹框-->
+<div class="trading-modal modal fade" id="add-users">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header clearfix">
+				<span type="button" class="g-close pull-right cp" data-dismiss="modal" aria-hidden="true">+</span>
+				<div class="tx-title" id="myModalLabel"><span class="modal-g">G</span>Gravity钱包</div>
+			</div>
+			<div class="modal-body">
+				<div class="trading-content fc16">
+					<p class="trading-title fcw18 mb10">添加账户</p>
+					<div class="logoin">
+						<div class="logoin-input">
+							<span class="fc16">账户类型：</span>
+							<select class="sele-account" id="numbers">
+		                      	<option value="1">抗量子账户</option>
+		                        <option value="0" selected>普通账户</option>
+             			 </select>
+						</div>
+						
+					<div class="logoin-input fc16" style="margin-top: 26px;">
+						<span class="fc16">账户名称：</span>
+						<input id="sure-twice" type="text" placeholder="账户名称由4～16位的英文字母组成" maxlength="16"/>
+						<div class="warning-bottom">
+							<span class="password-warning" id="add-acc-wran">&nbsp;</span>
+						</div>
+					</div>
+					<div class="logoin-input fc16">
+						<span class="fc16 pull-left user-img">账户头像：</span>
+						<div class="select-user">
+							<img src="../img/user.png" alt="" />
+							<div class="choose-file cm">选择文件...</div>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-normal" id="btn-succ">确定</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/template" id="user_list_template">
+	<div class="user-list clearfix">
+		<div class="user-info pull-left">
+			<span class="diff-user"><%= accInfos.acctName %></span>
+		</div>
+		<img src="<%= accInfos.icon %>" class="pull-right" />
+	</div>
+</script>
