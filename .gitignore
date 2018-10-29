@@ -1,0 +1,10 @@
+node_modules
+*.exe
+*.xml
+.idea/
+
+*.DS_Store
+
+test.*
+*.history
+package-lock.json

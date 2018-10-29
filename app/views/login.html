@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../fonts/iconfont/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="../../reference/bootstrap/bootstrap.min.css" />
+		<link rel="stylesheet" href="../css/base.css" />
+		<link rel="stylesheet" type="text/css" href="../css/login.css" />
+	</head>
+	<body>
+		<!--loading加载页面-->
+		<div class="container" id="home-page">
+			<div class="bg">
+				<img src="../img/gravity.jpg" />
+			</div>
+			<div class="home-title">
+				<span class="fcdc72">G</span>
+				<span class="fcd872">ravity</span>
+				<span class="fcc820">v1.0</span>
+			</div>
+			<div class="progress">
+				<div class="loading"></div>
+			</div>
+		</div>
+		<!--语言选择页面-->
+		<div class="container none" id="language">
+			<div class="sel-language">
+				<div class="home-title">
+					<span class="fcdc72">G</span>
+					<span class="fcd872">ravity</span>
+					<span class="fcc820">v1.0</span>
+				</div>
+				<div class="introduce">
+					<p class="fc16">欢迎使用<span class="cm">G</span>ravity官方钱包，下面将进行一系列初始化操作，为了您的账户安全，请按照流程耐心操作!</p>
+					<div class="lan-contain">
+						<span class="fc14">选择语言:</span>
+						<div class="dropdown drop-lan">
+							<div class="state" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<span style="font-weight: 600;">简体中文</span>
+								<span class="caret pull-right mtrbl12"></span>
+							</div>
+							<div class="dropdown-menu" aria-labelledby="dLabel">
+								<ul>
+                                    <li>
+                                        <span>简体中文</span>
+                                    </li>
+                                    <!-- <li>
+                                        <span>ENGELISH</span>
+                                    </li>
+                                    <li>
+                                        <span>日本語</span>
+                                    </li>
+                                    <li>
+                                        <span>한국어</span>
+                                    </li>
+                                    <li>
+                                        <span>Zulu</span>
+                                    </li> -->
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button class="btn-normal btn-next login-steps" data-show="introduce">下一步</button>
+			</div>
+		</div>
+		<!--简介页面-->
+		<div class="container none" id="introduce">
+			<div class="banner-intro clearfix">
+				<div class="banner-left pull-left">
+					<div class="intro-title">
+						<span class="fcdc52">G</span>
+						<span class="fcd852">ravity</span>
+						<span class="fcc816">v1.0</span>
+					</div>
+					<p class="fc14 ptrbl mt32 lh26">欢迎使用<span class="cm">G</span>ravity官方钱包，下面将进行一系列初始化操作，为了您的账户安全，请按照流程耐心操作!</p>
+					<div class="intro-img">
+						<img src="../img/gravity.jpg" alt="" />
+					</div>
+				</div>
+				<div class="banner-right pull-right">
+					<div id="carousel-example-generic" class="carousel intro-carousel">
+						<!-- Indicators -->
+						<div class="intro-position">
+							<ol class="carousel-indicators intro-indicators">
+								<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+								<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+							</ol>
+						</div>
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner" role="listbox">
+							<div class="item active intro-item">
+								<h2>什么是<span class="cm">G</span>ravity</h2>
+								<p class="fc16"><span class="cm">G</span>ravity 是一种新型底层公有链分布式账本系统。<span class="cm">G</span>ravity 是一种新型底层公有链分布式账本系统。 它采用新型的 DAG(Directed Acyclic Graph)存储和共识方案，以及基于 DAG 的智能合约方案设计。 不仅可以实现 在 <span class="cm">G</span>ravity网络上交易的快速落账以及数据的及时共享，而且可以在该平台上灵活地 开发去中心化 的应用程序(DApp)。此外，
+									<span class="cm"></span>ravity 还实现了公有链和联盟链之间的跨 链技术，打通了链之间价值 交换的通道。
+								</p>
+							</div>
+							<div class="item intro-item">
+								<h2>什么是钱包</h2>
+								<p class="fc16">钱包是与区块链进行交互并使用货币的工具它可以用来发送和接收资金，并作为个人的交易分类帐。</p>
+							</div>
+							<div class="item intro-item">
+								<h2>你的密钥</h2>
+								<p class="fc16">钱包是由钱包种子决定产生的。记忆种子是一个包含 33个单词的列表，可以很容易地写在一张纸上作为备份。 区块链用于确认新事务是有效的，并且没有发生欺诈。 如果钱包加密密码被遗忘，或者钱包被破坏 (例如电脑坏掉)，种子可以用来找回钱包。同样的种子 也可以用于将您的钱包导出到其他的
+									<span class="cm">G</span>ravity钱包客户端。
+								</p>
+							</div>
+							<div class="item intro-item">
+								<h2>友情提示</h2>
+								<p class="fc16">始终保持种子密钥和密码的安全。如果您丢失了 种子密钥或密码，其他人将无法恢复它。 备份你的种子密钥和密码。不要把它存储在你 的电脑上，而是把它写下来，或者打印在一张纸上， 或者保存到USB驱动器上。 不要将种子密钥存储在云存储或密码服务中。 如果你的账户被盗，你的资金也会被盗。
+								</p>
+							</div>
+						</div>
+					</div>
+					<button class="btn-normal btn-next pull-right login-steps" data-show="create-wallet">跳过</button>
+				</div>
+			</div>
+		</div>
+		<!--创建钱包，恢复钱包页面-->
+		<div class="container none" id="create-wallet">
+			<div class="crewallet-con">
+				<div class="crewallet-box1">
+					<span class="pull-left login-steps" id="crewallet" data-show="purse-seed">
+						<img src="../img/Add.png"/>
+					</span>
+					<span class="line pull-left"></span>
+					<div class="crewallet-right">
+						<div>创建<span class="cm">钱</span>包</div>
+						<p class="fc16">创建<span class="cm">G</span>ravity数字钱包，<span class="cm">G</span>ravity数字钱包可以帮助您方便地管理<span class="cm">G</span>ravity账户， 新建钱包时需要输入密码，该密码会被用于锁定钱包。
+							<span class="cm">G</span>ravity数字钱包还为您提供进行转账交易，余额查询等功能。 我们会随机生成用于产生和恢复钱包的种子并呈现给您。请您务必保 管好
+							<span class="cm">G</span>ravity钱包的密码和种子。
+						</p>
+					</div>
+				</div>
+				<div class="crewallet-box2">
+					<span class="pull-left login-steps" id="rewallet" data-show="input-seed">
+						<img src="../img/easyicon.png"/>
+					</span>
+					<span class="line pull-left"></span>
+					<div class="crewallet-right">
+						<div>恢<span class="cm">复</span>钱包</div>
+						<p class="fc16">恢复<span class="cm">G</span>ravity数字钱包，<span class="cm">G</span>ravity数字钱包提供了恢复钱包功能，以方便用户便捷 地转移钱包账户到其他设备。当转移或登陆其他设备时， 用户只需提供创建钱包时分配给用户的钱包种子，即可完成
+							<span class="cm">G</span>ravity数字钱包的迁移。
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--钱包种子-->
+		<div class="container none" id="purse-seed">
+			<div class="container-box clearfix">
+				<div class="purseed-con">
+					<div class="regist-title">
+						<span class="fc42">钱包<span class="cm">种</span>子</span>
+					</div>
+					<div class="purseed-font fc14">
+						<p class="lh26">下面展示的是钱包的种子，种子是用于恢复钱包的唯一方法。如果您不慎遗忘钱包密码 或者钱包文件被损坏，您可以通过种子恢复钱包。钱包创建后，种子将被彻底销毁， 任何人都无法通过操纵您的钱包获取种子。因此，请您将种子妥善记录下来，并保存到最安全的地方。
+						</p>
+					</div>
+					<div class="purseed-code">
+						<p id="seed" class="fc16"></p>
+						<i id="copy" class="iconfont icon-fuzhi cp"></i>
+						<div class="reminder none">复制成功</div>
+					</div>
+				</div>
+				<div class="purseed-btn pull-right">
+					<button class="btn-shut mr10 login-steps" data-show="create-wallet">返回</button>
+					<button class="btn-normal login-steps go-sure-seed" data-show="sure-seed">下一步</button>
+				</div>
+			</div>
+		</div>
+		<!--确认种子页面-->
+		<div class="container none" id="sure-seed">
+			<div class="container-box clearfix">
+				<div class="purseed-con">
+					<div class="regist-title">
+						<span class="fc42">种子<span class="cm">确</span>认</span>
+					</div>
+					<div class="purseed-font fc14">
+						<p class="lh26">钱包的种子是恢复钱包的唯一途径，如果您不慎遗忘钱包密码或者钱包文件被损坏， 您可以通过种子恢复钱包，为了确保您正确记录了种子，请您在文本框中输入种子进行确认。
+						</p>
+					</div>
+					<div class="purseed-code fc16 sure-seed-text">
+						<!--<input class="seed-sure-input" />-->
+					</div>
+				</div>
+				<div class="purseed-btn pull-right">
+					<button class="last-step btn-shut mr10 login-steps" data-show="purse-seed">返回</button>
+					<button id="validate" class="btn-normal go-reg" data-show="register">下一步</button>
+				</div>
+			</div>
+		</div>
+		<!--输入种子页面-->
+		<div class="container none" id="input-seed">
+			<div class="container-box clearfix">
+				<div class="purseed-con">
+					<div class="regist-title">
+						<span class="fc42">钱包<span class="cm">种</span>子</span>
+					</div>
+					<div class="purseed-font fc14">
+						<p class="lh26">下面展示的是钱包的种子，种子是用于恢复钱包的唯一方法。如果您不慎遗忘钱包密码																															
+		或者钱包文件被损坏，您可以通过种子恢复钱包。钱包创建后，种子将被彻底销毁，																															
+		任何人都无法通过操纵您的钱包获取种子。因此，请您将种子妥善记录下来，并保存到最安全的地方。																																																									
+						</p>
+					</div>
+					<div class="input-purseed">
+						<textarea class="seed-found" placeholder="请正确输入您的钱包种子"></textarea>
+					</div>
+					<span class="password-warning">&nbsp;</span>
+				</div>
+				<div class="purseed-btn pull-right">
+					<button class="btn-shut mr10 login-steps" data-show="create-wallet">返回</button>
+					<button class="btn-normal found-wallet" data-show="register">下一步</button>
+				</div>
+			</div>
+		</div>	
+		<!--注册确认密码页面-->
+		<div class="container none" id="register">
+			<div class="wallet-regist">
+				<div class="regist-title">
+					<span class="fc42">设置<span class="cm">密</span>码</span>
+				</div>
+				<div class="logoin">
+					<div class="logoin-input fc16">
+						<span class="fc16 pr14">钱包密码</span>
+						<input id="btn-sure" type="password" placeholder="请填写账户密码..." />
+						<span class="password-level">
+							<i class="active"></i>
+							<i class="active1"></i>
+							<i></i>
+						</span>
+					</div>
+					<div class="logoin-input fc16">
+						<span class="fc16 pr14">密码确认</span>
+						<input id="sure-twice" type="password" placeholder="请再次确认密码..." />
+					</div>
+					<div class="warning-bottom">
+						<span class="password-warning" id="setpwd-wrong">&nbsp;</span>
+					</div>
+				</div>
+				<div class="btn-style pull-right">
+					<button class="btn-shut go-seed-page">返回</button>
+					<button class="btn-normal go-login" data-show="login">下一步</button>
+				</div>
+			</div>
+		</div>
+		<!--登录页面-->
+		<div class="container none" id="login">
+			<div class="banner-intro clearfix">
+				<div class="banner-left pull-left">
+					<div class="intro-title">
+						<span class="fcdc52">G</span>
+						<span class="fcd852">ravity</span>
+						<span class="fcc816">v1.0</span>
+					</div>
+					<div class="intro-img">
+						<img src="../img/gravity.jpg" alt="" />
+					</div>
+					<p class="fc14 ptrbl lh26" style="position:relative;"><span class="cm">G</span>ravity是一种新型底层 公有链分布式账本系统。它采用新型的DAG（Directed Acyclic Graph）存储和共识方案，以及基于 DAG的智能合约方案设计，不仅可以实现在
+						<span class="cm">G</span>ravity网络上交易的快速落账 以及数据的及时共享，而且可以在该平台上灵活的开发去中心化的应用程序（DApp）。
+					</p>
+				</div>
+				<div class="banner-right pull-right">
+					<div class="login">
+						<div class="intro-title">
+							<span class="fcd832">登录</span>
+							<span class="fcdc38">G</span>
+							<span class="fcd838">ravity</span>
+						</div>
+						<div class="login-user">
+							<span class="fc16">账户密码：</span>
+							<input type="password" id="login-input" placeholder="请填写账户密码..." />
+							<div class="warning-bottom">
+								<span class="password-warning" id="login-wrong" style="padding-left: 32px;">&nbsp;</span>
+							</div>
+						</div>
+					</div>
+					<button class="btn-normal btn-next pull-right" id="go-index">登录</button>
+				</div>
+			</div>
+		</div>
+		<div template-href='result-page'></div>
+	</body>
+	<script>
+		window.$ = window.jQuery = require('../../reference/jquery/jquery.min.js')
+	</script>
+	<script src="../../reference/bootstrap/bootstrap.min.js"></script>
+	<script src="../js/public/require.min.js"></script>
+	<script src="../js/public/loadTemplates.js"></script>
+	<script src="../../util/format.js"></script>
+	<script src="../js/login-page.js"></script>
+</html>

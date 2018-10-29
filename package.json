@@ -1,0 +1,51 @@
+{
+  "name": "Grivaty_wallet",
+  "version": "1.0.0",
+  "description": "Wallet using electron",
+  "main": "main.js",
+  "build": {
+    "appId": "com.dzmy.app",
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "zip"
+      ]
+    }
+  },
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --mac --x64"
+  },
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^2.0.0",
+    "electron-builder": "^20.28.2",
+    "electron-packager": "^12.1.2",
+    "electron-rebuild": "^1.8.2"
+  },
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "electron-json-config": "^1.5.3",
+    "electron-settings": "^3.2.0",
+    "qrcode": "^1.2.2",
+    "sqlite3": "^4.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SHDMT/gwallet-GUI"
+  }
+}
