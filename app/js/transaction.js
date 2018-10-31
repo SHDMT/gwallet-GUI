@@ -43,6 +43,20 @@ let sendPayments = (args, isTx) => {
 		}
 	})
 }
+
+let checkTransactionsEmpty = (transactions) =>{
+	if(transactions.length<1){
+		return true;
+	}
+	for (var tx of transactions) { // 遍历Map
+		let key = tx[0];
+		let value = tx[1];
+		if(value == "" || value == null || key == "" || key == null){
+			return true;
+		}
+	}
+	return false;
+}
 let payAssets = () => {
 	$('#payAssets').off().on('click', function() {
 		let tx_lists = $('#tx_list .normal-transfer-list');
@@ -51,10 +65,7 @@ let payAssets = () => {
             transactions.set(format.addMark($('#tx_list' +
 				' .transaction-tx-receiver').eq(index).val().trim()), $('#tx_list .transaction-tx-amount').eq(index).val().trim());
 		})
-		console.log(transactions)
-        if (transactions.length<1){
-            console.log(transactions.length)
-            console.log($('#transaction-wrong'))
+        if (checkTransactionsEmpty(transactions)){
             document.getElementById("transaction-wrong").innerHTML
             $('#transaction-wrong').text('提示：收款人和转账金额不能为空');
         }else {
@@ -83,7 +94,23 @@ let payAssets = () => {
                     $('#ipt-wrong').text('提示：密码输入错误，请重新输入');
                 }
 
-            })
+			});
+			
+			$('body').off('keydown').on('keydown', '#tradingPwdModal', function (e) {
+				let x = e.key;
+				if (x == 'Enter') {
+					let txPwd = $('.pwd-style').val();
+					let pwdHash = sessionStorage.getItem('pwdHash')
+					if (createDataHash(txPwd) == pwdHash) {
+						$('#ipt-wrong').text('');
+						$('#tradingPwdModal').modal('toggle');
+						sendPayments(txData, isTx);
+					} else {
+						//密码输入错误，请重新输入
+						$('#ipt-wrong').text('提示：密码输入错误，请重新输入');
+					}
+				}
+			});
         }
     })
 }

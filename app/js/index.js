@@ -29,6 +29,7 @@ let showBalance = (args) => {
 let getCurrentMCI = () => {
 	gravityData.getCurrentMCI()
 	.then(res => {
+		sessionStorage.setItem('MCI', 0)
 		if(res.errorCode == 0 && res.data){
 			sessionStorage.setItem('MCI', Number(res.data))
 		}

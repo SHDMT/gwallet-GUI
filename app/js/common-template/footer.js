@@ -113,6 +113,8 @@ let createNewAccount = (args) => {
 								$('body').removeClass('modal-open');
 								$('.modal-backdrop').remove();
 							});
+						}else{
+							console.log("err:", err);
 						}
 					});
 				});

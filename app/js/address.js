@@ -223,7 +223,7 @@ let updateContactPass = (elm) => {
     $('#friend-modal #friend-input').val(elm.attr('data-addr'));
 	$('#friend-modal #friend-msg-input').val(elm.attr('data-name'));
     $('#friend-modal').off('click').on('click', '#btn-succ', function () {
-    		let addrUpdate = $('#friend-input').val();
+    	let addrUpdate = $('#friend-input').val();
         let msgUpdate = $('#friend-msg-input').val();
         walletDB.db.serialize(function () {
             walletDB.db.run("UPDATE CONTACTS SET name = $name, address = $addr WHERE rowid = " + rowId, {$name: msgUpdate, $addr: addrUpdate}, (err, res) => {
@@ -252,28 +252,38 @@ let delContact = () => {
         $('#tradingPwdModal').modal('toggle');
         // 监听关闭密码输入窗口
         $('#tradingPwdModal').on('click', '#tx-pwd-sure', function() {
-            $('#warnModal').modal('toggle');
-            $('#warnTxt').text('您确定要删除该联系人？');
-            $('#warnModal .modal-footer').removeClass('none');
-            $('#warnModal').off().on('click', '#del-addr-sure', function () {
-                walletDB.db.serialize(function () {
-                    walletDB.db.run("DELETE FROM CONTACTS WHERE rowid = " + rowId, (err, res) => {
-                        console.log("删除好友", err, res);
-                        if (err == null) {
-                            //释放删除数据占用的内存
-                            walletDB.db.exec("VACUUM")
-                            $('#warnModal').modal('toggle');
-                            $('#successModal').modal('toggle');
-                            $('#succeTxt').text('删除联系人成功');
-                            $('#successModal').one('hidden.bs.modal', () => {
-                                $('body').removeClass('modal-open');
-                                $('.modal-backdrop').remove();
-                                showMyFriendList();
-                            });
-                        }
+
+            let txPwd = $('.pwd-style').val();
+    		let pwdHash = sessionStorage.getItem('pwdHash')
+    		if(createDataHash(txPwd) == pwdHash){
+    			$('#ipt-wrong').text('');
+                $('#tradingPwdModal').modal('hide');
+                //进入修改联系人信息弹窗
+                $('#warnModal').modal('show');
+                $('#warnTxt').text('您确定要删除该联系人？');
+                $('#warnModal .modal-footer').removeClass('none');
+                $('#warnModal').off('click').on('click', '#del-addr-sure', function () {
+                    walletDB.db.serialize(function () {
+                        walletDB.db.run("DELETE FROM CONTACTS WHERE rowid = " + rowId, (err, res) => {
+                            if (err == null) {
+                                //释放删除数据占用的内存
+                                walletDB.db.exec("VACUUM")
+                                $('#warnModal').modal('hide');
+                                $('#successModal').modal('toggle');
+                                $('#succeTxt').text('删除联系人成功');
+                                $('#successModal').one('hidden.bs.modal', () => {
+                                    $('body').removeClass('modal-open');
+                                    $('.modal-backdrop').remove();
+                                    showMyFriendList();
+                                });
+                            }
+                        });
                     });
-                });
-            })
+                })
+    		} else{
+    			//密码输入错误，请重新输入
+    			$('#ipt-wrong').text('提示：密码输入错误，请重新输入');
+            }   
         })
     })
 }
@@ -298,7 +308,7 @@ let addrBindEvent = () => {
     $('body').on('click', '#warnModal .close-modal', function (e) {
         e.stopPropagation();
         $('body').removeClass('modal-open');
-		$('.modal-backdrop').remove();
+        $('.modal-backdrop').remove();
         $('#warnModal').modal('hide');
     })
     $('body').on('click', '#successModal .g-close', function (e) {
