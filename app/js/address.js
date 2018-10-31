@@ -85,10 +85,10 @@ let delAddr = () => {
         		$('#warnTxt').text('每个账户至少保留一个地址！');
     		} else{
     			let rowId = $(this).attr('data-id');
-	        $('#warnModal').modal('toggle');
-	        $('#warnTxt').text('您确定要删除该地址？');
-	        $('#warnModal .modal-footer').removeClass('none');
-	        $('#warnModal').off('click').on('click', '#del-addr-sure', function () {
+                $('#warnModal').modal('toggle');
+                $('#warnTxt').text('您确定要删除该地址？');
+                $('#warnModal .modal-footer').removeClass('none');
+                $('#warnModal').off('click').on('click', '#del-addr-sure', function () {
 	            walletDB.db.serialize(function () {
 	                walletDB.db.run("DELETE FROM ADDRESS WHERE rowid = " + rowId, (err, res) => {
 	                    console.log("删除地址", err, res);
@@ -161,14 +161,15 @@ let addContact = () => {
 		$('#friend-input').val('');
 		$('#friend-msg-input').val('');
         $('#friend-modal').modal('toggle');
+        $('#friend-modal .friend-title').text('添加联系人');
         $('#friend-modal').off().on('click', '#btn-succ', function(){
 	        let firendAddr = $('#friend-input').val().trim();
 	        let friendMsg = $('#friend-msg-input').val();
 	        //验证地址
 	        if (firendAddr.trim().length==0){
-                $('#ipt-wrong').text('提示：好友地址不能为空');
+                $('.addresswarning-info').text('提示：好友地址不能为空');
             }else if(!format.isBase64(firendAddr.trim())){
-                $('#ipt-wrong').text('提示：好友地址格式不正确');
+                $('.addresswarning-info').text('提示：好友地址格式不正确');
             }else {
                 //添加数据到联系人表
                 walletDB.db.serialize(function () {
@@ -183,6 +184,9 @@ let addContact = () => {
                                 $('.modal-backdrop').remove();
                                 showMyFriendList();
                             });
+                        }else{
+                            console.log("ininininin:", err)
+                            $('.addresswarning-info').text('添加联系人错误：'+ err);
                         }
                     });
                 });
@@ -195,24 +199,24 @@ let updateContact = () => {
 	$('.address-list').off().on('click', '.friend-updata', function () {
 		let elm = $(this);
 		//输入钱包密码
-		$('.pwd-style').val('');
-		$('#tradingPwdModal').modal('toggle');
+		// $('.pwd-style').val('');
+		// $('#tradingPwdModal').modal('toggle');
 		// 监听关闭密码输入窗口
-    		$('#tradingPwdModal').on('click', '#tx-pwd-sure', function(){
-    			//读取数据库交易密码是否输入正确
-    			let txPwd = $('.pwd-style').val();
-    			let pwdHash = sessionStorage.getItem('pwdHash')
-    			if(createDataHash(txPwd) == pwdHash){
-    				$('#ipt-wrong').text('');
-    				$('#tradingPwdModal').modal('toggle');
+    		// $('#tradingPwdModal').on('click', '#tx-pwd-sure', function(){
+    		// 	//读取数据库交易密码是否输入正确
+    		// 	let txPwd = $('.pwd-style').val();
+    		// 	let pwdHash = sessionStorage.getItem('pwdHash')
+    		// 	if(createDataHash(txPwd) == pwdHash){
+    				// $('#ipt-wrong').text('');
+    				// $('#tradingPwdModal').modal('toggle');
     				//进入修改联系人信息弹窗
-    				updateContactPass(elm);
-    			} else{
-    				//密码输入错误，请重新输入
-    				$('#ipt-wrong').text('提示：密码输入错误，请重新输入');
-    			}
+    		updateContactPass(elm);
+    		// 	} else{
+    		// 		//密码输入错误，请重新输入
+    		// 		$('#ipt-wrong').text('提示：密码输入错误，请重新输入');
+    		// 	}
     			
-    		})
+    		// })
 		
     })
 }
@@ -248,16 +252,16 @@ let delContact = () => {
 	$('.address-list').on('click', '.friend-delete', function () {
         let rowId = $(this).attr('data-id');
         //输入钱包密码
-        $('.pwd-style').val('');
-        $('#tradingPwdModal').modal('toggle');
+        // $('.pwd-style').val('');
+        // $('#tradingPwdModal').modal('toggle');
         // 监听关闭密码输入窗口
-        $('#tradingPwdModal').on('click', '#tx-pwd-sure', function() {
+        // $('#tradingPwdModal').on('click', '#tx-pwd-sure', function() {
 
-            let txPwd = $('.pwd-style').val();
-    		let pwdHash = sessionStorage.getItem('pwdHash')
-    		if(createDataHash(txPwd) == pwdHash){
+        //     let txPwd = $('.pwd-style').val();
+    	// 	let pwdHash = sessionStorage.getItem('pwdHash')
+    	// 	if(createDataHash(txPwd) == pwdHash){
     			$('#ipt-wrong').text('');
-                $('#tradingPwdModal').modal('hide');
+                // $('#tradingPwdModal').modal('hide');
                 //进入修改联系人信息弹窗
                 $('#warnModal').modal('show');
                 $('#warnTxt').text('您确定要删除该联系人？');
@@ -280,11 +284,11 @@ let delContact = () => {
                         });
                     });
                 })
-    		} else{
-    			//密码输入错误，请重新输入
-    			$('#ipt-wrong').text('提示：密码输入错误，请重新输入');
-            }   
-        })
+    		// } else{
+    		// 	//密码输入错误，请重新输入
+    		// 	$('#ipt-wrong').text('提示：密码输入错误，请重新输入');
+            // }   
+        // })
     })
 }
 let addrBindEvent = () => {

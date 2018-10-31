@@ -199,13 +199,13 @@ function bindFixedDenominationEventListener() {
     });
 }
 
-function issueAssetSucceed(){
-    $('#successModal').modal('toggle');
-	$('#succeTxt').text('资产发布成功');
+function issueAssetSucceed() {
+    $('#successModal').modal('show');
+    $('#succeTxt').text('资产发布成功');
 }
 
-function issueAssetFailed(err){
-    $('#errorModal').modal('toggle');
+function issueAssetFailed(err) {
+    $('#errorModal').modal('show');
     $('#errorTxt').text(err);
 }
 
@@ -215,23 +215,25 @@ function issueAssetFailed(err){
 //  issueJson:xxxxx,
 //  send:false， 如果是计算交易费传send 执行则不用send
 // }
-function doIssueAsset(data){
+function doIssueAsset(data) {
     let account = sessionStorage.getItem('accName');
     let jsonData = {
         "account": account,
         "issueJson": format.addMark(JSON.stringify(data)),
-        "send":true
+        "send": true
     }
-    gWalletData.issueContract(jsonData).then(res=>{
+    gWalletData.issueContract(jsonData).then(res => {
         console.log(res)
-        if(format.isBase64(res.data)){
+        if (format.isBase64(res.data)) {
             issueAssetSucceed();
             listAssetsInSelect();
             clearIssueContractParams();
-        }else{
+
+            updateIssueTransactionFee(0, 0);
+        } else {
             issueAssetFailed(res.data);
         }
-    }).catch(err=>{
+    }).catch(err => {
         console.log(err)
         issueAssetFailed(err.errorMessage["message"]);
     });
@@ -254,7 +256,22 @@ function issueMessageOnSubmit() {
 
 function bindSubmitEventListener() {
     $('#issue-asset').on('click', () => {
-        issueMessageOnSubmit()
+        $('.pwd-style').val('');
+        $('#tradingPwdModal').modal('show');
+        //监听关闭密码输入窗口
+        $('#tradingPwdModal').on('click', '#tx-pwd-sure', function () {
+            //读取数据库交易密码是否输入正确
+            let txPwd = $('.pwd-style').val();
+            let pwdHash = sessionStorage.getItem('pwdHash')
+            if (createDataHash(txPwd) == pwdHash) {
+                $('#ipt-wrong').text('');
+                issueMessageOnSubmit()
+                $('#tradingPwdModal').modal('hide');
+            } else {
+                //密码输入错误，请重新输入
+                $('#ipt-wrong').text('提示：密码输入错误，请重新输入');
+            }
+        })
     });
 }
 
@@ -358,7 +375,7 @@ function generateIssueJSON() {
             "AllocationAddr": allocations[0],
             "AllocationAmount": allocations[1],
             "Contracts": configDefs,
-           // "PublisherAddress": publisherAddress
+            // "PublisherAddress": publisherAddress
         },
         "Note": note
     };
@@ -376,16 +393,16 @@ function recalculateIssueContractFee() {
     let jsonData = {
         "account": account,
         "issueJson": format.addMark(JSON.stringify(data)),
-        "send":false
+        "send": false
     }
-    gWalletData.issueContract(jsonData).then(res=>{
+    gWalletData.issueContract(jsonData).then(res => {
         console.log(res)
-        if(isIssueContractNumeric(res.data)){
+        if (isIssueContractNumeric(res.data)) {
             updateIssueTransactionFee(Number(res.data), Number(res.data));
-        }else{
+        } else {
             updateIssueTransactionFee("NaN", "NaN");
         }
-    }).catch(err=>{
+    }).catch(err => {
         updateIssueTransactionFee("NaN", "NaN");
     });
 }

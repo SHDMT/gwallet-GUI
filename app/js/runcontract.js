@@ -193,11 +193,11 @@ function clearRunContractParams() {
 }
 
 function invokeContractSucceed() {
-    $('#successModal').modal('toggle');
+    $('#successModal').modal('show');
     $('#succeTxt').text('合约运行成功');
 }
 function invokeContractFailed(err) {
-    $('#errorModal').modal('toggle');
+    $('#errorModal').modal('show');
     $('#errorTxt').text(err);
 }
 
@@ -218,10 +218,10 @@ function doInvokeContract(data) {
     };
     gWalletData.invokeContract(jsonData).then(res => {
         console.log(res)
-        if(format.isBase64(res.data)){
+        if (format.isBase64(res.data)) {
             invokeContractSucceed();
             clearRunContractParams();
-        }else{
+        } else {
             invokeContractFailed(res.data);
         }
     }).catch(err => {
@@ -237,8 +237,25 @@ function submitRunContract() {
         return
     }
 
-    let data = generateInvokeJSON();
-    doInvokeContract(data);
+    $('.pwd-style').val('');
+    $('#tradingPwdModal').modal('show');
+    //监听关闭密码输入窗口
+    $('#tradingPwdModal').on('click', '#tx-pwd-sure', function () {
+        //读取数据库交易密码是否输入正确
+        let txPwd = $('.pwd-style').val();
+        let pwdHash = sessionStorage.getItem('pwdHash')
+        if (createDataHash(txPwd) == pwdHash) {
+            $('#ipt-wrong').text('');
+
+            let data = generateInvokeJSON();
+            doInvokeContract(data);
+            $('#tradingPwdModal').modal('hide');
+        } else {
+            //密码输入错误，请重新输入
+            $('#ipt-wrong').text('提示：密码输入错误，请重新输入');
+        }
+    });
+
 }
 function isInvokeContractNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
@@ -262,9 +279,9 @@ function recalculateRunContractFee() {
     };
     gWalletData.invokeContract(jsonData).then(res => {
         console.log(res)
-        if(isInvokeContractNumeric(res.data)){
+        if (isInvokeContractNumeric(res.data)) {
             updateInvokeTransactionFee(Number(res.data), Number(res.data));
-        }else{
+        } else {
             updateInvokeTransactionFee("NaN", "NaN");
         }
     }).catch(err => {
@@ -290,7 +307,7 @@ function bindIntervalRefreshAsset() {
         if (currentAsset != "") {
             //console.log("update balance:", currentAsset)
             updateAccountBalanceByAsset(currentAsset);
-        }else{
+        } else {
             updateAccountBalanceByAsset("Gravity");
         }
     }, 1000)
@@ -313,7 +330,7 @@ function updateAccountBalanceByAsset(name) {
                 return;
             }
         });
-        
+
     }).catch((error) => {
         updateCashAmount(0, 0, name);
         console.log("Get balance error:" + error);

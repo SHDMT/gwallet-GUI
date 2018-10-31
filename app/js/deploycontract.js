@@ -32,12 +32,12 @@ function updateDeployTransactionFee(size, fee) {
 }
 
 function deployContractSucceed(){
-    $('#successModal').modal('toggle');
-	$('#succeTxt').text('资产发布成功');
+    $('#successModal').modal('show');
+	$('#succeTxt').text('合约部署成功');
 }
 
 function deployContractFailed(err){
-    $('#errorModal').modal('toggle');
+    $('#errorModal').modal('show');
     $('#errorTxt').text(err);
 }
 
@@ -77,7 +77,24 @@ function clearDeployContractParams(){
 
 function deployContractSubmit(data){
     console.log(data)
-    doDeployContract(data)
+    $('.pwd-style').val('');
+    $('#tradingPwdModal').modal('show');
+    //监听关闭密码输入窗口
+    $('#tradingPwdModal').on('click', '#tx-pwd-sure', function () {
+        //读取数据库交易密码是否输入正确
+        let txPwd = $('.pwd-style').val();
+        let pwdHash = sessionStorage.getItem('pwdHash')
+        if (createDataHash(txPwd) == pwdHash) {
+            $('#ipt-wrong').text('');
+
+            let data = generateInvokeJSON();
+            doDeployContract(data)
+            $('#tradingPwdModal').modal('hide');
+        } else {
+            //密码输入错误，请重新输入
+            $('#ipt-wrong').text('提示：密码输入错误，请重新输入');
+        }
+    })
 }
 
 const selectDirBtn = document.getElementById('deploy-contract-select-btn')
