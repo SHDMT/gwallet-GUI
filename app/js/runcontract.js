@@ -248,8 +248,8 @@ function submitRunContract() {
             $('#ipt-wrong').text('');
 
             let data = generateInvokeJSON();
-            doInvokeContract(data);
             $('#tradingPwdModal').modal('hide');
+            doInvokeContract(data);
         } else {
             //密码输入错误，请重新输入
             $('#ipt-wrong').text('提示：密码输入错误，请重新输入');

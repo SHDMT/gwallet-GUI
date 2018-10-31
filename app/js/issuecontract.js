@@ -265,8 +265,8 @@ function bindSubmitEventListener() {
             let pwdHash = sessionStorage.getItem('pwdHash')
             if (createDataHash(txPwd) == pwdHash) {
                 $('#ipt-wrong').text('');
-                issueMessageOnSubmit()
                 $('#tradingPwdModal').modal('hide');
+                issueMessageOnSubmit()
             } else {
                 //密码输入错误，请重新输入
                 $('#ipt-wrong').text('提示：密码输入错误，请重新输入');
