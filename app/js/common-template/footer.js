@@ -165,7 +165,7 @@ let footerBindEvent = () => {
 		$('.select-user>img').attr('src', '../img/user.png');
 		$('#add-users').modal('toggle');
 	})
-	$('body').on('click', '#btn-succ', function () {
+	$('.footer-add-new-account').on('click', '#btn-succ', function () {
 		let accName = $('#sure-twice').val();
 		let accData = {
 			acctId: Math.floor(Math.random() * 100 + 1),
