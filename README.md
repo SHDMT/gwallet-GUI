@@ -36,7 +36,7 @@ Gravity能够在如下平台中运行：
 
 ## 区块链私链搭建教程
 
-
+​	https://github.com/SHDMT/gravity/wiki
 
 ## 钱包GUI编译指南
 
