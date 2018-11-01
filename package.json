@@ -20,6 +20,7 @@
   },
   "scripts": {
     "start": "electron .",
+    "rebuild":"electron-rebuild -f -w sqlite3",
     "dist": "electron-builder --mac --x64"
   },
   "keywords": [
