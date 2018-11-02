@@ -113,8 +113,6 @@ let createNewAccount = (args) => {
 								$('body').removeClass('modal-open');
 								$('.modal-backdrop').remove();
 							});
-						}else{
-							console.log("err:", err);
 						}
 					});
 				});
@@ -165,7 +163,7 @@ let footerBindEvent = () => {
 		$('.select-user>img').attr('src', '../img/user.png');
 		$('#add-users').modal('toggle');
 	})
-	$('.footer-add-new-account').on('click', '#btn-succ', function () {
+	$('body').on('click', '#btn-succ', function () {
 		let accName = $('#sure-twice').val();
 		let accData = {
 			acctId: Math.floor(Math.random() * 100 + 1),
@@ -331,11 +329,11 @@ let footerInit = () => {
 	isCommittee();	//委员会成员
 	getMiningSpeed();	//挖矿速度
 	getAccList();//获取账户列表
-	if (sessionStorage.getItem('MCI')) {
+	//if (sessionStorage.getItem('MCI')) {
 		setInterval(function () {
 			$('#dag-mci').text(sessionStorage.getItem('MCI'));
 		}, 3000)
-	}
+	//}
 	let startPeers = setInterval(function () {
 		getPeers();
 	}, 30000)
