@@ -85,7 +85,7 @@ let startWallet = (inParm) => {
               resolve(data);
         });
         // startWalletResult.stderr.on('data', (data) => {
-        //     console.log(`gwallet启动失败: ${data}`);
+        //     console.log(`gwallet start error: ${data}`);
         //     reject(data);
         // });
         config.set('startWalletPid',startWalletResult.pid)

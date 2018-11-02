@@ -144,6 +144,9 @@ let addAddrFun = () => {
                             });
                         });
                     })
+                }else{
+                    $('#errorModal').modal('toggle');
+                    $('#errorTxt').text(res.data);
                 }
                 if(res.data.indexOf('more than 20') != -1){
                 		throw '未使用的地址不能超过20个';
