@@ -1,4 +1,4 @@
-const format = require('../../util/format');
+//let format = require('../../util/format');
 
 let currentAsset = ""
 
@@ -16,7 +16,6 @@ function contractNameToContractParamsFile(contract) {
 function updateSelectableAssets(assetArray) {
     let assetOptions = "";
     let arr = format.objToStrMap(assetArray);
-
     let index = 0;
     arr.forEach((value, key) => {
         assetOptions = assetOptions + `<option value="${value}">${key}</option>`;
@@ -45,6 +44,7 @@ function listSelectableContract(data) {
         }
     });
     $('.select-contract').html(contractOptions);
+
     return activeContract
 }
 
@@ -124,7 +124,7 @@ function updateCashAmount(spendable, total, assetName) {
         total = total + " N";
     } else {
         spendable = spendable + " " + assetName;
-        totall = total + " " + assetName;
+        total = total + " " + assetName;
     }
     $('.spendable-cash').html(spendable);
     $('.total-cash').html(total);
@@ -310,7 +310,7 @@ function bindIntervalRefreshAsset() {
         } else {
             updateAccountBalanceByAsset("Gravity");
         }
-    }, 5000)
+    }, 1000)
 }
 
 function updateAccountBalanceByAsset(name) {
@@ -330,7 +330,9 @@ function updateAccountBalanceByAsset(name) {
                 return;
             }
         });
+        
     }).catch((error) => {
+        updateCashAmount(0, 0, name);
         console.log("Get balance error:" + error);
     });
 }
@@ -342,11 +344,13 @@ function updateContractByAsset(hash) {
             let contracts = JSON.parse(res.data);
             updateSelectableContract(contracts);
         }).catch((error) => {
+            console.log(">>>:", error)
             console.log("Get all contracts by asset error:" + error);
         });
 }
 
 function updateAsset(name, hash) {
+    console.log(">>>>>>>>>>>>")
     currentAsset = name
     updateContractByAsset(hash);
     updateAccountBalanceByAsset(name);
@@ -355,6 +359,7 @@ function updateAsset(name, hash) {
 function listAssetsInSelect() {
     gWalletData.getAllAssets()
         .then(res => {
+            console.log("11111:", res.data);
             data = JSON.parse(res.data);
             updateSelectableAssets(data);
         }).catch(err => {

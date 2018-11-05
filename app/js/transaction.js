@@ -1,3 +1,5 @@
+let format = require('../../util/format');
+
 let normalTransactionAddrList = 1
 let sendPayments = (args, isTx) => {
 	gWalletData.sendPayments(args, isTx)
@@ -60,7 +62,8 @@ let payAssets = () => {
 		let tx_lists = $('#tx_list .normal-transfer-list');
         let transactions = new Map();
         tx_lists.map(index => {
-            transactions.set($('#tx_list .transaction-tx-receiver').eq(index).val().trim(), $('#tx_list .transaction-tx-amount').eq(index).val().trim());
+            transactions.set(format.addMark($('#tx_list' +
+				' .transaction-tx-receiver').eq(index).val().trim()), $('#tx_list .transaction-tx-amount').eq(index).val().trim());
 		})
         if (checkTransactionsEmpty(transactions)){
             document.getElementById("transaction-wrong").innerHTML
@@ -125,7 +128,7 @@ let txFee = () => {
 		let tx_lists_fee = $('#tx_list .transfer-list');
 		let transactions_fee = new Map();
 		tx_lists_fee.map(index => {
-			transactions_fee.set($('#tx_list .tx-receiver').eq(index).val(), $('#tx_list .tx-amount').eq(index).val());
+			transactions_fee.set(format.addMark($('#tx_list .tx-receiver').eq(index).val().trim()), $('#tx_list .tx-amount').eq(index).val().trim());
 		})
 		let txFeeData = {
 			accountName: sessionStorage.getItem('accName'),

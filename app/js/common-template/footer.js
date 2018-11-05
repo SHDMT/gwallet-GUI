@@ -103,7 +103,7 @@ let createNewAccount = (args) => {
 				//添加新账户到accountInfo表中
 				walletDB.db.serialize(function () {
 					walletDB.db.run("INSERT INTO ACCOUNTINFO(acctId, acctName, icon, type) VALUES (?,?,?,?)", [args.acctId, args.accountName, args.icon, args.acctType], (err, res) => {
-						console.log("添加新账户到accountInfo表中", err, res);
+						console.log("add new account into accountInfo table", err, res);
 						if (err == null) {
 							$('#add-users').modal('toggle');
 							$('#successModal').modal('toggle');
@@ -127,7 +127,7 @@ let getAccList = () => {
 	walletDB.db.serialize(function () {
 		walletDB.db.all("select * from ACCOUNTINFO", (err, res) => {
 			if (err !== null) {
-				console.log('查找账户表失败')
+				console.log('Failed to get account list')
 			} else {
 				let user_list_template = $('#user_list_template').html();
 				let accInfos;
@@ -186,7 +186,7 @@ let footerBindEvent = () => {
 		//查找账户表是否重名
 		walletDB.db.serialize(function () {
 			walletDB.db.all("select * from ACCOUNTINFO WHERE acctName = ?", [accName], (err, res) => {
-				console.log("查找账户表是否重名", err, res);
+				console.log("Is rename?", err, res);
 				if (res.length != 0) {
 					$('#add-acc-wran').text('提示：账户名称已存在！')
 					return;
@@ -325,7 +325,7 @@ let footerInit = () => {
 	footerBindEvent();	//事件绑定
 	$('#dag-mci').text(sessionStorage.getItem('MCI'));
 	getPeers(); //网络状态
-	getCurrentHeight();	//区块高度 
+	getCurrentHeight();	//区块高度
 	isCommittee();	//委员会成员
 	getMiningSpeed();	//挖矿速度
 	getAccList();//获取账户列表
