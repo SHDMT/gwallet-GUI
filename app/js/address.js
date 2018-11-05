@@ -167,7 +167,7 @@ let addContact = () => {
 	        //验证地址
 	        if (firendAddr.trim().length==0){
                 $('#ipt-wrong').text('提示：好友地址不能为空');
-            }else if(format.isBase64(firendAddr.trim())){
+            }else if(!format.isBase64(firendAddr.trim())){
                 $('#ipt-wrong').text('提示：好友地址格式不正确');
             }else {
                 //添加数据到联系人表

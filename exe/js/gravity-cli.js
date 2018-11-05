@@ -194,6 +194,7 @@ let getAllContractsByAsset = (inParm) => {
     return new Promise((resolve, reject) => {
         let exe_parm = '../gravity-cli listcontracts -a '+inParm.assetHash;
         let exe_PATH = path.resolve(__dirname, exe_parm);
+        console.log("cmd:", exe_parm);
         exec(exe_PATH, (err, stdout, stderr) => {
             if (err) {
                 reject(err)

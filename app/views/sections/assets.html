@@ -155,19 +155,19 @@
 		<script type="text/template" id="tx_history_template">
 			<% details.forEach(tx => { %>
 			<tr class="row" style="font-size:13px">
-				<td class="col-md-2">
+				<td class="col-md-3">
 					<%= tx.TimeStamp %>
 				</td>
-				<td class="col-md-5">
+				<td class="col-md-7">
 					<%= tx.MessageKey %>
 				</td>
-				<td class="col-md-2">暂无数据</td>
-				<td class="col-md-2">暂无数据</td>
-				<td class="col-md-1 fcw14 cp tx-details" data-id="<%= tx.MessageKey %>">详情</td>
+				<!--<td class="col-md-2">暂无数据</td>-->
+                <!--<td class="col-md-2">暂无数据</td>-->
+                <td class="col-md-2 fcw14 cp tx-details" data-id="<%= tx.MessageKey %>">详情</td>
 
-			</tr>
-			<% }) %>
-		</script>
+            </tr>
+            <% }) %>
+</script>
 		<script src="../js/assets.js"></script>
 	</section>
 </template>

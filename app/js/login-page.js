@@ -109,7 +109,7 @@ let bindEvent = () => {
 //		 seedSure[21] = seedInput;
 //		 seedSure[26] = seedInput;
 		$('.sure-seed-text').html(seedSure.join(' '));
-	})
+	});
 	$('.go-reg').on('click', function(){
 		 seedSure[3] = $('.seed-sure-input').eq(0).val().trim();
 //		 seedSure[7] = $('.seed-sure-input').eq(1).val();
@@ -120,9 +120,9 @@ let bindEvent = () => {
 		let argSeed = seedSure.join(',');
 		let seedData = {
 			inputSeed: argSeed
-		}
+		};
 		validateSeed(seedData);
-	})
+	});
     $('#login-input').keydown(function(e){
         e = e || event;
         var x = e.key;
@@ -219,11 +219,13 @@ let startGravity = () => {
     gravityData.startGravity()
         .then(res => {
             //成功如何处理
-            ipcRenderer.send("close")
+            //ipcRenderer.send("close")
+			console.log("Start gravity successful")
         })
         .catch(err => {
             //出错如何处理
-            ipcRenderer.send("close")
+            //ipcRenderer.send("close")
+            console.log("failed to start gravity")
         })
 };
 

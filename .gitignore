@@ -1,12 +1,11 @@
 node_modules
-*.exe
 *.xml
 .idea/
 
 *.DS_Store
 
 test.*
-*.history
-*.gitignore
+readline.history
 package-lock.json
 *.json
+

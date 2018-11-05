@@ -198,7 +198,7 @@ let addMark=(string)=>{
 
 let isBase64=(string)=>{
     let base64regex = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
-    return base64regex.test(string)
+    return base64regex.test(string);
 }
 
 

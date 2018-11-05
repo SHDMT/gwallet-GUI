@@ -118,7 +118,7 @@ let showTxDetails = () => {
 			let tx_detail_template = $('#tx_detail_template').html();
 			let txDetailHtml = EJS.render(tx_detail_template, detailData);
 			$('.tx-detail-table').html(txDetailHtml);
-			$('#assets-section .trading-modal').modal('toggle');
+			$('.trading-details-modal').modal('toggle');
 		} else{
 			$('#warnModal').modal('toggle');
 			$('#warnModal .btn-footer').addClass('none');

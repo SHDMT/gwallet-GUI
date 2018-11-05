@@ -1,14 +1,7 @@
 /*
     注册阶段的数据
  */
-const {
-    ipcRenderer
-} = require('electron');
-const gwallet_cli = require('../../../exe/js/gwallet-cli');
 const gwallet = require('../../../exe/js/gwallet');
-const gravity = require('../../../exe/js/gravity');
-const command = require('../../../exe/js/command');
-const gravity_cli = require('../../../exe/js/gravity-cli');
 const responseData = require('../../../util/responseData');
 
 //获取种子
