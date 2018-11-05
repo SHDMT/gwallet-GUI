@@ -1,0 +1,105 @@
+<template class="task-template">
+	<section id="issue-contract-section" class="section js-section u-category-windows">
+		<div class="container-right">
+			<div class="contract-type">
+				<p class="contract-title">智能合约&nbsp;<span class="cm">/&nbsp;发行资产</span></p>
+				<div class="contract-details issue-cont">
+					<div class="cont-details1">
+						<div class="cont-column"><span>资产名称：</span><input type="text" class="sty-length issue-name" placeholder="EleCoin" /></div>
+						<div class="cont-column"><span>资产总量：</span><input type="text" class="sty-length issue-amount" placeholder="28000000" /></div>
+						<div class="cont-column">
+							<span style="padding-right: 10px;">固定面额：</span>
+							<input type="radio" value="0" name="fix-denomination" class="fix-denomination" checked /><span style="padding-right: 12px;">&nbsp;否</span>
+							<input type="radio" value="1" name="fix-denomination" class="fix-denomination" /><span>&nbsp;是</span>
+							<input type="text" class="sty-length denominations" placeholder="5;10;20;100" disabled="disabled" />
+						</div>
+						<div>
+							<span>资产分配：</span>
+							<div class="assets-allocation">
+								<div class="transfer-list fc16 div-allocation div-allocationIndex0">
+									<span>转账给：</span>
+									<div class="txhash">
+										<input type="text" class="issue-tx-receiver tx-allocation-receiver" placeholder="">
+										<img src="../img/id.png" title="选择账户" class="issue-addressbook" index="0">
+									</div>
+									<span>金额:</span>
+									<input type="text" class="tx-num fc8 issue-tx-amount tx-allocation-amount">
+									<span>N</span>
+									<img class="tx-delete remove-allocationIndex0" index="0" src="../img/error1.png">
+								</div>
+							</div>
+							<div class="add-l">
+								<span class="add-ress">+分配地址</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="cont-details2 row" style="height: 178px;">
+						<div class="col-md-4">
+							<span>选择合约:</span>
+							<div class="select-drop run-cont">
+								<!-- Nav tabs -->
+								<ul class="nav nav-tabs support-contract" role="tablist">
+									
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-4 cont-explain">
+							<div class="fw600 explain">合约<span class="cm">说明</span></div>
+							<p class="lh26 support-contract-info">普通转账智能合约，可以实现资产的转移，提供两种不同的合约模式，即单签名转账和多签名转账。</p>
+							<div class="deploy-add">配置&添加>></div>
+						</div>
+						<div class="col-md-4 cont-operate">
+							<table>
+								<thead>
+									<tr>
+										<th class="col-md-6">选中合约</th>
+										<th class="col-md-6">操作</th>
+									</tr>
+								</thead>
+								<tbody class="selected-support-contracts"></tbody>
+							</table>
+						</div>
+					</div>
+					<div class="cont-input">
+						<div class="cont-font"><span>合约说明：</span></div>
+						<div class="cont-text"><textarea name="" rows="" cols="" class="issue-info"></textarea></div>
+					</div>
+					<div class="add-address fc16 clearfix">
+						<div class="tx-detail pull-right clearfix">
+							<div class="row ">
+								<div class="col-md-6">预计交易大小：</div>
+								<div class="col-md-6"><span id="issue-transaction-size">258</span> &nbsp;B</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">交易费：</div>
+								<div class="col-md-6"><span id="issue-transaction-fee">466</span> &nbsp;N</div>
+							</div>
+							<div class="row">
+									<div class="col-md-6 issue-contract-error-info" style="margin-left:20px; color:rgb(196, 42, 42);"></div>
+							</div>
+							<button class="btn-normal pull-right mt32" id="issue-asset">执&nbsp;&nbsp;行</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="contract-config-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header clearfix">
+						<span type="button" class="g-close pull-right cp" data-dismiss="modal">+</span>
+						<div class="tx-title" id="myModalLabel"><span class="modal-g">G</span>Gravity钱包</div>
+					</div>
+					<div class="modal-body">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-normal" id="btn-config-succ">确定</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="../js/issuecontract.js"></script>
+	</section>
+</template>

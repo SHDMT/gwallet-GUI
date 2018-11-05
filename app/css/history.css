@@ -1,0 +1,10 @@
+/*.container{width:100%;}*/
+.trading-detail{box-sizing: content-box;width: 90%;height:500px;padding: 14px 18px;margin: 26px auto 20px;
+box-shadow: 1px 3px 46px #000;text-align: center;position: relative;}
+.trading-detail .dropdown-menu{min-width: 66px;}
+.trading-detail .tr-drop{margin-top: 6px;box-shadow:0 0 10px #000;width: 46px;height: 52px;padding: 2px;background-color: #292a2e;text-align: center;}
+.trading-detail .tr-drop li{padding-top: 4px;}
+.trading-list{margin-top: 46px;max-height: 400px;overflow-y: scroll;}
+.trading-list tr td{text-align: center;}
+.table>tbody>tr>td{color:#b6b6b6;border-top:none;border-bottom:1px solid #b6b6b6;}
+

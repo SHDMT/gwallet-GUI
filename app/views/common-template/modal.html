@@ -1,0 +1,154 @@
+<!--弹框-->
+<div id="add-contacts" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header clearfix">
+				<span type="button" class="g-close pull-right" data-dismiss="modal" aria-hidden="true">+</span>
+				<div class="tx-title" id="myModalLabel"><span class="modal-g">G</span>Gravity钱包</div>
+			</div>
+			<div class="modal-body">
+				<!-- <div class="tx-search">
+					<input type="text" />
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-icon-test"></use>
+					</svg>
+				</div> -->
+				<div class="tx-content fc16">
+					<div class="row tx-content-title">
+						<div class="col-md-8 p64">联系人</div>
+						<div class="col-md-4">
+							选择
+						</div>
+					</div>
+					<div class="tx-contact">
+						<!--<div class="row f14">
+									<div class="col-md-8 p64">隔壁老王</div>
+									<div class="col-md-4">
+										<input type="checkbox" />
+									</div>
+								</div>-->
+					</div>
+				</div>
+			</div>
+			<input name="target" type="hidden" class="add-contacts-hidden" />
+			<div class="modal-footer">
+				<button type="button" class="btn btn-shut" data-dismiss="modal">关闭</button>
+				<button type="button" class="btn btn-normal addrbook-btn-succ" id="btn-succ">确定</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--模态弹框-->
+<div class="trading-modal modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header clearfix">
+				<span type="button" class="g-close pull-right cp" data-dismiss="modal" aria-hidden="true">+</span>
+				<div class="tx-title" id="myModalLabel"><span class="modal-g">G</span>Gravity钱包</div>
+			</div>
+			<div class="modal-body">
+				<div class="trading-content fc16">
+					<p class="trading-title fcw18 mb10">交易详情</p>
+					<table class="table">
+						<tbody class="f14 tx-detail-table">
+							<!--<tr>
+									<td class="col-md-3">交易ID：</td>
+									<td class="col-md-7">jmqiPvzkNYz2Q1VQPTUI06H7sT/gyktR/kCN4wt38=</td>
+							</tr>-->
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-normal" data-dismiss="modal" id="btn-succ">确定</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/template" id="tx_detail_template">
+	<tr>
+		<td class="col-md-3">交易ID：</td>
+		<td class="col-md-7">
+			<%= MessageKey %>
+		</td>
+	</tr>
+	<tr>
+		<td class="col-md-2">MCI：</td>
+		<td class="col-md-8">暂无数据</td>
+	</tr>
+	<!--<tr>
+		<td class="col-md-3">区块高度：</td>
+		<td class="col-md-7">暂无数据</td>
+	</tr>-->
+	<tr>
+		<td class="col-md-3">交易时间：</td>
+		<td class="col-md-7">
+			<%= TimeStamp %>
+		</td>
+	</tr>
+	<tr>
+		<td class="col-md-3">转账人：</td>
+		<td class="col-md-7">
+			<% input.forEach((_in)=>{ %>
+			<p title="<%=  _in.Address %>">
+				<%=  _in.inAddr %>
+			</p>
+			<% }) %>
+		</td>
+	</tr>
+	<tr>
+		<td class="col-md-3">收款人：</td>
+		<td class="col-md-7">
+			<% output.forEach((_out)=>{ %>
+			<p title="<%=  _out.Address %>">
+				<%=  _out.outAddr %>
+			</p>
+			<% }) %>
+		</td>
+	</tr>
+	<tr>
+		<td class="col-md-3">接收/发送：</td>
+		<td class="col-md-7">暂无数据</td>
+	</tr>
+	<tr>
+		<td class="col-md-3">交易类型：</td>
+		<td class="col-md-7">
+			<%= type %>
+		</td>
+	</tr>
+	<tr>
+		<td class="col-md-3">交易费：</td>
+		<td class="col-md-7">暂无数据</td>
+	</tr>
+</script>
+
+
+<!--模态弹框-->
+<div class="lock-modal modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header clearfix">
+				<div class="tx-title" id="myModalLabel"><span class="modal-g">G</span>Gravity钱包</div>
+			</div>
+			<div class="modal-body">
+					<table class="table">
+						<tbody class="f14 tx-detail-table">
+							<!--<tr>
+									<td class="col-md-3">交易ID：</td>
+									<td class="col-md-7">jmqiPvzkNYz2Q1VQPTUI06H7sT/gyktR/kCN4wt38=</td>
+							</tr>-->
+							<p class="trading-title fcw18 mb10">钱包已锁定</p>
+							<div style="margin-left:40px">
+								钱包密码：<input style="padding:0px 10px;" class="tx-search lock-modal-password" type="password" />
+							</div>
+							<div class="lock-modal-error-info" style="color:#a22;text-align:center">&nbsp;</div>
+						</tbody>
+					</table>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-normal btn-lockmodal-submit" id="btn-succ">解锁</button>
+			</div>
+		</div>
+	</div>
+</div>

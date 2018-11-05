@@ -7,4 +7,6 @@ node_modules
 
 test.*
 *.history
+*.gitignore
 package-lock.json
+*.json

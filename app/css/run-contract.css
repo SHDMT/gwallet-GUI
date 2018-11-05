@@ -1,0 +1,58 @@
+body{color: #b6b6b6;overflow: hidden;}
+.contract-details{font-size: 15px;}
+.cont-details1,.cont-details2{margin-top: 22px;}
+.cont-details3{margin: 0;}
+.contract-type{padding: 20px 60px 32px 32px;}
+.contract-title{font-size: 18px;}
+.security-setting,.security-rate{padding: 10px 30px;}
+.security-setting>p,.security-rate>p{padding-bottom: 10px;}
+.security-setting div,.security-renew div{line-height: 34px;padding-left: 12px;font-size: 14px;color: #dcc59c;}
+.txhash{position: relative;width: 50%;height: 28px;display: inline-block;line-height: 28px;border-radius: 16px;border: 1px solid #fff;
+  background-color: #fff;padding-left: 20px;margin-right: 26px;margin-bottom: 20px;}   
+.txhash input{width: 90%;height: 26px;line-height: 26px;border: none;}
+.cont-details3 img{position: absolute;right: 0;width: 18px;height: 18px;margin: 4px 12px;cursor: pointer;}
+.cont-explain .explain{padding: 2px 0;}	
+.cont-parameters{
+	box-sizing: border-box;
+    width: 100%;
+    height: 186px;
+    padding: 18px;
+    margin: 14px auto 20px;
+    box-shadow: 1px 3px 46px #000;
+    overflow-y: scroll;
+}	
+.select-assets{width: 172px;border-radius: 15px;padding-left: 48px;color: #6c6868;}
+.select-drop{margin-left: 12px;
+    display: inline-block;
+    width: 172px;
+    height: 156px;
+    background-color: #fff;
+    vertical-align: top;
+    border-radius: 5px;
+    overflow-y: scroll;
+    }
+.nav-tabs{border-bottom: 1px solid transparent;}
+.select-drop a{color: #6c6868;}
+.run-cont .nav-tabs>li.active>a,.run-cont .nav-tabs>li.active>a:focus,.run-cont .nav-tabs>li.active>a:hover {
+    color: #6c6868;
+    cursor: default;
+    width: 180px;
+    background-color: #dcc59c;
+    border: none; 
+    border-bottom-color: transparent;
+    font-weight: 600;
+}
+.run-cont .nav>li>a {
+    position: relative;
+    display: block;
+    padding: 5px 15px; 
+    width: 180px;
+    border-bottom: 1px dashed #b6b6b6;
+}
+.transfer-sum{display: inline-block;width: 100px;height: 26px;line-height: 26px;text-align:center;
+color:#6c6868;background-color: #fff;border-radius: 15px;margin: 0px 32px 10px 8px;}
+.contract-mode{width: 140px;border-radius: 15px;color: #6c6868;padding-left: 10px;}
+.tx-detail{width: 30%;padding-top: 22px;}
+.tx-detail>.row{padding: 10px;}
+.contract-type{max-height: 538px;overflow-y: scroll;}
+.add-address{margin-bottom: 60px;}

@@ -1,0 +1,173 @@
+<template class="task-template">
+	<section id="assets-section" class="section js-section u-category-windows">
+		<div class="container-right clearfix" id="assets">
+			<div class="assets-money clearfix">
+				<div class="assets-m-style remaining-money pull-left">
+					<div class="remaining-l pull-left">
+						<img src="../img/Coins.png" alt="" />
+						<p>账户余额</p>
+					</div>
+					<span class="line pull-left"></span>
+					<div class="remaining-r asset-total">
+						<span class="f28"></span>
+						<span class="f12"></span>
+					</div>
+				</div>
+				<div class="assets-m-style usable-money pull-left">
+					<div class="usable-l pull-left">
+						<img src="../img/Checkmark.png" alt="" />
+						<p>可用余额</p>
+					</div>
+					<span class="line pull-left"></span>
+					<div class="usable-r asset-spendable">
+						<span class="f28"></span>
+						<span class="f12"></span>
+					</div>
+				</div>
+			</div>
+			<div class="assets-account" style="height: 136px;">
+				<div class="assets-c-style account-info pull-left">
+					<div class="remaining-l pull-left account-info" data-toggle="modal" data-target="#assets-modal" data-show="true" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<img src="../img/id.png" alt="" />
+						<p class="account-txt fc14">账户信息</p>
+					</div>
+					<span class="line pull-left"></span>
+					<div class="remaining-r pull-left">
+						<div class="assets-search">
+							<input type="text" readonly="readonly"/>
+							<div class="picture">
+								<img src="../img/qr_code.png" class="QRcode-small" />
+								<div class="QRcode">
+									<canvas id="" width="120" height="120" class="QRcode-big"></canvas>
+									<!--<img src="../img/qr_code.png" class="QRcode-big" />-->
+									<div class="headerEditShow">
+										<div class="triangle-outer"></div>
+										<div class="triangle-inner"></div>
+									</div>
+								</div>
+							</div>							
+						</div>
+						<img src="../img/File.png" title="复制" class="copy" alt="" />
+						<img src="../img/Refresh.png" title="切换地址" class="switch" alt="" />
+						<div class="reminder assert-copy none">复制成功</div>
+					</div>
+				</div>
+			</div>
+			<div class="assets-detail clearfix">
+				<div class="assets-nav-l pull-left">
+					<span class="fcw18">最近交易</span>
+				</div>
+				<div class="assets-list">
+					<table class="table tx-history-table">
+						<tbody class="fc14">
+							<!--<tr class="row">
+								<td class="col-md-2">2018/8/3 20:20:23</td>
+								<td class="col-md-5">jmqiPvzkNYz2Q1VQPTUI06H7sT/gyktR/kCN4wt38=</td>
+								<td class="col-md-2">+0.28</td>
+								<td class="col-md-2">√</td>
+								<td class="col-md-1 fcw14 cp" data-toggle="modal" data-target="#trading-modal" data-show="true" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">详情</td>
+							</tr>-->
+						</tbody>
+					</table>
+					<div class="no-data none" id="unreadNoData">
+						<img src="../img/no-data.png"/>
+					</div>	
+				</div>
+			</div>
+		</div>
+		<!--模态弹框-->
+		<div id="assets-modal" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header clearfix">
+						<span type="button" class="g-close pull-right cp" data-dismiss="modal" aria-hidden="true">+</span>
+						<div class="tx-title" id="myModalLabel"><span class="modal-g">G</span>Gravity钱包</div>
+					</div>
+					<div class="modal-body">
+						<div class="assets-content fc16">
+							<div class="assets-title clearfix">
+								<p class="assets-title fcw18 mb10 pull-left">Default</p>
+
+								<!-- <div class="dropdown mr20 bt pull-right">
+									<div class="cp" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										Gravity
+										<span class="caret"></span>
+									</div>
+									<div class="dropdown-menu tr-drop" aria-labelledby="dLabel">
+										<ul class="fc12">
+										</ul>
+									</div>
+								</div> -->
+							</div>
+							<div class="assert-style remaining-money clearfix">
+								<div class="remaining-l pull-left">
+									<img src="../img/Coins.png" alt="" />
+									<p>账户余额</p>
+								</div>
+								<span class="line pull-left"></span>
+								<div class="remaining-r asset-total">
+									<span class="f28"></span>
+									<span class="f12"></span>
+								</div>
+							</div>
+							<div class="assert-style usable-money clearfix">
+								<div class="usable-l pull-left">
+									<img src="../img/Checkmark.png" alt="" />
+									<p>可用余额</p>
+								</div>
+								<span class="line pull-left"></span>
+								<div class="usable-r asset-spendable">
+									<span class="f28"></span>
+									<span class="f12"></span>
+								</div>
+							</div>
+							<p class="assert-addr-list fcw18">地址列表</p>
+							<div class="assert-table-con">
+								<table class="table assert-add-table">
+									<tbody class="f14">
+										<!--<tr>
+											<td class="col-md-8">jmqiPvzkNYz2Q1VQPTUI06H7sT/gyktR/kCN4wt38=</td>
+											<td class="col-md-2 copy">复制</td>
+										</tr>-->
+									</tbody>
+								</table>
+								<div class="reminder table-copy none">复制成功</div>
+							</div>
+							<p class="fcw14 cp addAddr" id="addAddr">+新地址</p>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-normal" data-dismiss="modal" id="btn-succ">确定</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--添加地址-->
+		<script type="text/template" id="addr_add">
+			<tr>
+				<td class="col-md-8">
+					<%= newAddr.addr %>
+				</td>
+				<td class="col-md-2 copy-addr copy" title="复制" data-addr="<%= newAddr.addr %>">复制</td>
+			</tr>
+		</script>
+		<!--最近交易-->
+		<script type="text/template" id="tx_history_template">
+			<% details.forEach(tx => { %>
+			<tr class="row" style="font-size:13px">
+				<td class="col-md-2">
+					<%= tx.TimeStamp %>
+				</td>
+				<td class="col-md-5">
+					<%= tx.MessageKey %>
+				</td>
+				<td class="col-md-2">暂无数据</td>
+				<td class="col-md-2">暂无数据</td>
+				<td class="col-md-1 fcw14 cp tx-details" data-id="<%= tx.MessageKey %>">详情</td>
+
+			</tr>
+			<% }) %>
+		</script>
+		<script src="../js/assets.js"></script>
+	</section>
+</template>

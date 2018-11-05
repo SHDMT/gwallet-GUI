@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "electron .",
-    "rebuild":"electron-rebuild -f -w sqlite3",
+    "rebuild": "electron-rebuild -f -w yourmodule",
     "dist": "electron-builder --mac --x64"
   },
   "keywords": [
@@ -43,10 +43,10 @@
     "electron-json-config": "^1.5.3",
     "electron-settings": "^3.2.0",
     "qrcode": "^1.2.2",
-    "sqlite3": "^4.0.3"
+    "sqlite3": "^4.0.2"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SHDMT/gwallet-GUI"
+    "url": "git@10.20.1.1:SHDMT/gwallet-gui.git"
   }
 }

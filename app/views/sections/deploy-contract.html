@@ -1,0 +1,34 @@
+<template class="task-template">
+	<section id="deploy-contract-section" class="section js-section u-category-windows">
+		<div class="container-right">
+			<div class="contract-type">
+				<p class="contract-title">智能合约&nbsp;<span class="cm">/&nbsp;部署合约</span></p>
+				<div class="contract-details">
+
+					<div>
+						<div class="select-column" style="margin-top:80px;margin-left:40px">
+							<span>JSON文件地址:</span>
+							<input type="text" class="state deploy-contract-filepath" />
+							<button class="btn-normal" id="deploy-contract-select-btn">选择</button>
+						</div>
+					</div>
+
+					<div class="add-address fc16 clearfix">
+						<div class="tx-detail pull-right clearfix">
+							<div class="row ">
+								<div class="col-md-6">预计交易大小：</div>
+								<div class="col-md-6"><span id="deplay-transaciton-size">258</span> &nbsp;B</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">交易费：</div>
+								<div class="col-md-6"><span id="deplay-transaciton-fee">466</span> &nbsp;N</div>
+							</div>
+							<button class="btn-normal pull-right mt32" id="deploy-contract-invoke">执&nbsp;&nbsp;行</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/deploycontract.js"></script>
+	</section>
+</template>

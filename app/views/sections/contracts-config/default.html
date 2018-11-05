@@ -1,0 +1,46 @@
+<div class="config-content fc16">
+    <p class="modal-title fcw18 mb10">Default Config</p>
+    <table class="table">
+        <tbody class="f14">
+            <tr>
+                <td class="col-md-10"><textarea rows="4" id="issue-default-config-input" placeholder="key:value,"></textarea></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="warning-add">
+        <span class="password-warning" id="fixpwd-wrong">&nbsp;</span>
+    </div>
+</div>
+
+<script>
+    function onContractConfigConfirm(){
+        $("#issue-default-config-input").html("")
+        return true
+    }
+    function hasConfig(){
+        return true;
+    }
+    function loadJSON(data){
+        console.log("params:", data)
+        $("#issue-default-config-input").val(data.params)
+    }
+    function generateJSON(address){
+        let params = $("#issue-default-config-input").val().split(",");
+        let paramsKey = [];
+        let paramsValue = [];
+        for(let i = 0; i < params.length; i ++){
+            let item = params[i].split(":");
+            if(item[0] != null && item[1] != null){
+                paramsKey.push(item[0]);
+                paramsValue.push(item[1]);
+            }
+        } 
+        
+        data = {
+            "Address":address,   
+            "ParamsKey":paramsKey,
+            "ParamsValue":paramsValue
+        }
+        return data;
+    }
+</script>

@@ -1,0 +1,145 @@
+	#home-page {
+				background-color: #000;
+				position: relative;
+			}
+			
+			#home-page .bg img {
+				margin: 140px auto;
+			}
+			
+			#home-page .bg {
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 1200px;
+				height: 1200px;
+				overflow: hidden;
+			}
+			
+			#home-page .progress {
+				height: 12px;
+				width: 100%;
+				margin-bottom: 0;
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				background:#fff; 
+			}
+			#home-page .progress .progress-bar {
+				background-color: #dcc59c;
+				width: 60%;
+				height: 12px;
+			}
+.loading{border-radius: 5px;background:#dcc59c;height:12px;position:fixed;bottom:0;z-index:99999;}  
+/*选择语言开始*/
+.home-title{position:absolute;top: 82px;left: 50%;transform: translateX(-50%);}
+.sel-language .introduce{width: 60%;position:absolute;top: 218px;left: 50%;transform: translateX(-50%);}
+.lan-contain{width:90%;margin:40px auto;text-align: center;}
+.lan-contain p{font-size: 24px;color:#434343;padding-bottom: 60px;}
+.lan-contain>span{font-size: 14px;color:#b6b6b6;padding-right: 26px;}
+.drop-lan{display:inline-block;}
+.drop-lan>span{margin-right:20px;}
+.drop-lan .state{width: 226px;height: 30px;line-height:30px;border: 1px solid #c3c3c3;cursor: pointer;border-radius: 15px;text-align: center;background-color:#fff;padding-left: 29px;}
+.drop-lan .dropdown-menu{width: 214px;border-radius: 0 0 15px 15px;background-color: rgba(249,245,245,1);margin: -3px 0 0 6px;}
+.drop-lan .dropdown-menu li{border-bottom:1px solid #d8d8d8;cursor: pointer;height: 26px;
+line-height: 26px;text-align: center;font-weight: 600;}
+.drop-lan .dropdown-menu li:last-child{border-bottom:none;}
+.sel-language button{position:absolute;bottom: 50px;right: 50px;}
+/*选择语言结束*/
+/*logoin开始*/
+.login .login-user{text-align: center;margin: 100px 0 166px;}
+.login .login-user input{border: none;width: 200px;height: 28px;border-radius: 15px;
+			padding-left: 16px;}
+
+/*introduce开始*/
+.banner-intro{height: 100%;}
+.intro-indicators li{border: 1px solid #dcc59c;margin-right: 16px;}
+.intro-indicators li.active{background-color:#dcc59c;box-shadow: 0 0 20px #dcc59c;margin-right: 16px;}
+.intro-item{padding: 20px 30px;}
+.intro-item h2{text-align: center;color:#b6b6b6;padding-bottom: 20px;}
+.banner-intro .banner-left{width: 40%;height: 100%;position: relative;background-color: #000;}
+.banner-intro .banner-right{width: 60%;height: 100%;position: relative;background-color: #292a2e;}
+.banner-intro .intro-title{text-align: center;padding-top: 60px;}
+.banner-left .intro-img{height: 100%;position:absolute;bottom: -250px;left:50%;transform: translateX(-50%);
+	width: 500px;height: 500px;overflow: hidden;}
+.banner-right .carousel{ width: 100%;height: 420px;position: relative;}
+.banner-right .carousel-indicators{position: absolute;bottom: -18px;left: 50%;z-index: 15;}
+.banner-right .carousel-indicators ol li{margin-right: 10px;}
+/*.banner-right button{ margin: 46px 26px;}*/
+.banner-right button{
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+}
+.intro-item p{line-height: 32px;}
+/*introduce结束*/
+.purseed-code img{width: 28px;height: 28px;margin: 10px;}
+/*create-wallet开始*/
+.crewallet-right div{color:#b6b6b6;font-size: 20px;font-weight: 600;padding: 18px 0 8px}
+.crewallet-right p{padding: 0 6px;}
+.crewallet-box1,.crewallet-box2{width: 90%;height:176px;padding: 1px 8px 0 0;margin: 0 auto;box-shadow: 1px 2px 36px #000;
+			margin-bottom: 18px;}
+.crewallet-con{background-color: #292a2e!important;width: 100%;height:100%;padding-top: 62px;}
+#crewallet img,#rewallet img{width: 82px;height: 82px;}
+#crewallet,#rewallet{height: 176px;width: 176px;line-height:176px;text-align:center;}
+.crewallet-con .line{margin-top: 20px;display: inline-block;height: 128px;border-left: 1px solid #b6b6b6;margin-right: 15px;}
+.crewallet-box1,.crewallet-box2{width: 90%;height:176px;padding: 1px 8px 0 0;margin: 0 auto;box-shadow: 1px 2px 36px #000;
+			margin-bottom: 26px;}
+.crewallet-con{background-color: #292a2e!important;width: 100%;height:100%;padding-top: 76px;}
+#crewallet img,#rewallet img{width: 82px;height: 82px;cursor: pointer;}
+#crewallet img:hover{padding: 1px;box-shadow: 0 0 26px #000;box-sizing: border-box;border-radius: 50%;}
+#rewallet img:hover{padding: 1px;box-shadow: 0 0 26px #000;box-sizing: border-box;}
+#crewallet,#rewallet{height: 176px;width: 176px;line-height:176px;text-align:center;}
+.crewallet-con .line{margin-top: 20px;display: inline-block;height: 136px;border-left: 1px solid #b6b6b6;margin-right: 15px;}
+/*create-wallet结束*/
+
+/*register开始*/
+.logoin{width: 57%;margin: 0px auto;}
+.logoin .password-stre{padding: 20px 0 0 14px;}
+.logoin-input input:first-child{margin-bottom: 20px;}
+.logoin-input input:nth-child(2){margin-top: 40px;}
+.logoin-input input{width: 220px;height: 28px;padding-left: 10px;border:1px solid #d3af26;border-radius: 15px;}
+.wallet-regist{width:100%;height:100%;background-color: #292a2e;position:relative;}
+.wallet-regist .regist-title{padding: 50px 62px;letter-spacing:6px }
+.password-level{visibility: hidden;}
+.password-level{margin-left: 36px;}
+.password-level i{vertical-align:middle;display:inline-block;margin-left: 6px;width: 14px;height: 14px;border-radius: 50%;border: 1px solid #b6b6b6;}
+.password-level i.active{background-color: #ec4343;}
+.password-level i.active1{background-color: #098e09;}
+.wallet-regist .btn-style{position:absolute;bottom: 50px;right: 50px;}
+.wallet-regist .warning-bottom{margin-left: 87px;}
+.wallet-regist .btn-style .btn-shut{margin-right: 10px;}
+/*register结束*/
+
+
+
+.container-box{width: 100%;height: 100%;background-color: #292a2e;}
+.purseed-con .regist-title{padding: 50px 0px;letter-spacing: 2px;}
+.purseed-con{width: 80%;margin: 0 auto;}
+.purseed-code{border: 1px solid #b6b6b6;border-radius: 8px;height: 140px;box-shadow: 0 0 6px #000;margin-top: 20px;
+padding: 6px;text-indent:2em;position:relative;}
+.purseed-code p{word-wrap: break-word;word-break: break-all;}
+.purseed-code input{width: 80px;border: none;outline: none;background-color: #292a2e;border-bottom: 1px solid #b6b6b6;
+text-align: center;font-size: 14px;color:#b6b6b6;}
+.purseed-code i{display:block;font-size:26px;color:#b6b6b6;position:absolute;bottom: 5px;right: 10px;cursor: pointer;}
+.reminder{width: 106px;height: 28px;position:absolute;bottom: 10px;left:50%;transform: translateX(-50%);
+			background-color: #dcc59c;line-height: 28px;text-align: left;border-radius: 5px;color:#fff;
+			opacity: 0.5;}
+.container-box .purseed-btn{position: absolute;
+    bottom: 50px;
+    right: 50px;}
+/*登陆页面开始*/
+.logo-img{padding:30px 0 15px 30px;}
+.login-contain{width: 60%;margin: 0 auto;text-align: center;}
+.login-contain p{font-size: 24px;color: #434343;padding-bottom: 60px;text-align: center;}
+.login-contain input{padding-left: 6px;width: 280px;height: 30px;line-height: 30px;border: 1px solid #c3c3c3;text-align: left;}
+.login-btn{width: 60%;margin: 0 auto;padding: 0 46px;}
+.login-btn .btn-defau{margin-top: 60px;width: 66px;height: 30px;color: #fff;background-color: #d3af26;}
+/*登陆页面结束*/
+
+/*输入种子页面开始*/
+.input-purseed{padding: 6px;text-indent: 0;position: relative;border: 1px solid #b6b6b6; 
+   	border-radius: 8px;height: 140px;box-shadow: 0 0 6px #000;margin-top: 20px;}
+.input-purseed textarea{width: 100%;height: 100%;border-radius: 8px;border:none;resize:none;
+background-color: #292a2e;color:#b6b6b6;word-wrap: break-word;word-break: break-all;text-indent: 2em;}
+/*输入种子页面结束*/

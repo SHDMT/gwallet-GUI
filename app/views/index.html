@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../fonts/iconfont/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="../../reference/bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" href="../css/base.css" />
+	<link rel="stylesheet" href="../css/assets.css" />
+	<link rel="stylesheet" href="../css/transaction.css" />
+	<link rel="stylesheet" href="../css/history.css" />
+	<link rel="stylesheet" href="../css/address.css" />
+	<link rel="stylesheet" href="../css/contract.css" />
+	<link rel="stylesheet" href="../css/settingsecu.css" />
+	<link rel="stylesheet" href="../css/settingmining.css" />
+	<link rel="stylesheet" href="../css/run-contract.css" />
+	<link rel="stylesheet" href="../css/deploy-contract.css" />
+	<link rel="stylesheet" href="../css/issue-contract.css" />
+	<!--所有的html模版-->
+	<link rel="import" href="sections/assets.html">
+	<link rel="import" href="sections/transaction.html">
+	<link rel="import" href="sections/history.html">
+	<link rel="import" href="sections/address.html">
+	<link rel="import" href="sections/contract.html">
+	<link rel="import" href="sections/setting.html" />
+	<link rel="import" href="sections/settingsecu.html" />
+	<link rel="import" href="sections/settingsys.html" />
+	<link rel="import" href="sections/settingnet.html" />
+	<link rel="import" href="sections/settingmining.html" />
+	<link rel="import" href="sections/settinghelp.html" />
+	<link rel="import" href="sections/settingconsole.html" />
+	<link rel="import" href="sections/settingbrowsers.html" />
+	<link rel="import" href="sections/run-contract.html" />
+	<link rel="import" href="sections/deploy-contract.html" />
+	<link rel="import" href="sections/issue-contract.html" />
+	<link rel="import" href="sections/coin-contract.html" />
+
+</head>
+
+<body>
+	<!-- <div template-href='header'></div> -->
+	<div class="header js-nav">
+		<span class="cm">G</span><span>ravity</span>
+		<!-- <div class="head-search">
+			<input type="text" />
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-icon-test"></use>
+			</svg>
+		</div> -->
+		<div class="head-tool pull-right">
+			<div class="lock-img head-tool-lock"><img src="../img/lock1.png" title="开/关" /></div>
+			<div class="nav-button setting-img" data-section="setting"><img src="../img/Gear.png" title="设置" /></div>
+		</div>
+	</div>
+
+	<div class="container1">
+		<nav class="sidebar pull-left js-nav">
+			<ul class="style-sidebar">
+				<li id="button-assets" class="nav-button" data-section="assets">
+					<img src="../img/home.png" data-section="assets" />
+					<p data-section="assets">主页</p>
+				</li>
+				<li id="button-transaction" class="nav-button" data-section="transaction">
+					<img src="../img/Dollar.png" data-section="transaction" />
+					<p data-section="transaction">交易</p>
+				</li>
+				<li id="button-history" class="nav-button" data-section="history">
+					<img src="../img/Check.png" data-section="history" />
+					<p data-section="history">历史</p>
+				</li>
+				<li id="button-address" class="nav-button" data-section="address">
+					<img src="../img/List.png" data-section="address" />
+					<p data-section="address">地址</p>
+				</li>
+				<li id="button-contract" class="nav-button" data-section="contract">
+					<img src="../img/os.png" data-section="contract" />
+					<p data-section="contract">合约</p>
+				</li>
+			</ul>
+		</nav>
+		<main class="main-content js-content"></main>
+	</div>
+	<div template-href='footer'></div>
+	<div template-href='result-page'></div>
+
+	<div template-href='modal' id="modal-container"></div>
+	<script>
+		window.$ = window.jQuery = require('../../reference/jquery/jquery.min.js');
+	</script>
+	<script src="../js/public/require.min.js"></script>
+	<script src="../js/public/loadTemplates.js"></script>
+	<script src="../js/public/imports.js"></script>
+	<script src="../js/public/nav.js"></script>
+	<script src="../fonts/iconfont/iconfont.js"></script>
+	<script src="../../reference/bootstrap/bootstrap.min.js"></script>
+	<script src="../../util/format.js"></script>
+	<script src="../js/index.js"></script>
+	<script src="../js/common-template/header.js"></script>
+	
+</body>
+
+</html>

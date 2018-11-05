@@ -1,0 +1,128 @@
+<!-- success提示 -->
+<div id="successModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" style="width: 480px;">
+				<div class="modal-content">
+					<div class="modal-header clearfix">
+						<span type="button" class="g-close pull-right cp result-page-successModal-close" data-dismiss="modal" aria-hidden="true">+</span>
+						<div class="tx-title"><span class="modal-g">G</span>Gravity钱包</div>
+					</div>
+					<div class="modal-body text-center">
+						<img src="../img/right.png" style="width:120px;height:120px;"/>
+						<p class="results-textf22" id="succeTxt">&nbsp;</p>
+					</div>
+				</div>
+			</div>
+		</div>
+<!-- error提示 -->
+<div id="errorModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" style="width: 480px;">
+		<div class="modal-content">
+			<div class="modal-header clearfix">
+				<span type="button" class="g-close pull-right cp" data-dismiss="modal" aria-hidden="true">+</span>
+				<div class="tx-title"><span class="modal-g">G</span>Gravity钱包</div>
+			</div>
+			<div class="modal-body text-center">
+				<img src="../img/error.png" style="width:120px;height:120px;" />
+				<p class="results-textf22" id="errorTxt">&nbsp;</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 警告提示 -->
+<div id="warnModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" style="width: 480px;">
+		<div class="modal-content">
+			<div class="modal-header clearfix">
+				<span type="button" class="g-close pull-right cp close-modal result-page-warnModal-close" data-dismiss="modal" aria-hidden="true">+</span>
+				<div class="tx-title"><span class="modal-g">G</span>Gravity钱包</div>
+			</div>
+			<div class="modal-body text-center">
+				<img src="../img/warning.png" style="width:120px;height:120px;" />
+				<p class="results-textf22" id="warnTxt">&nbsp;确定删除</p>
+			</div>
+			<div class="modal-footer btn-footer">
+				<button class="btn-normal" id="del-addr-sure">确定</button>
+				<button class="btn-shut close-modal result-page-warnModal-close" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--输入密码弹框-->
+<div id="tradingPwdModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" style="width: 480px;">
+		<div class="modal-content">
+			<div class="modal-header clearfix">
+				<span type="button" class="g-close pull-right cp" data-dismiss="modal" aria-hidden="true">+</span>
+				<div class="tx-title"><span class="modal-g">G</span>Gravity钱包</div>
+			</div>
+			<div class="modal-body text-center">
+				<!--<img src="../img/warning.png" style="width:120px;height:120px;" />-->
+				<p class="results-textf22" id="PwdTxt">&nbsp;请输入密码</p>
+				<input class="pwd-style" type="password" placeholder="请输入密码"/>
+				<div class="warning-btn1 ipt-btn">
+					<span class="password-warning ipt-wrong" id="ipt-wrong">&nbsp;</span>
+				</div>
+			</div>
+			<div class="modal-footer btn-footer">
+				<button class="btn-normal" id="tx-pwd-sure">确定</button>
+				<button class="btn-shut" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--修改密码弹框-->
+<div id="chan-passwordModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" style="width: 480px;">
+		<div class="modal-content">
+			<div class="modal-header clearfix">
+				<span type="button" class="g-close pull-right cp" data-dismiss="modal" aria-hidden="true">+</span>
+				<div class="tx-title"><span class="modal-g">G</span>Gravity钱包</div>
+			</div>
+			<div class="modal-body text-center">
+				<div class="ori-pwd">
+					<span>原密码：</span><input class="pwd-style" type="password" placeholder="请输入原密码"/>
+				</div>
+				<div class="new-pwd">
+					<span>新密码：</span><input class="pwd-style" type="password" placeholder="请输入新密码"/>
+				</div>
+				<div class="sur-pwd">
+					<span>确认密码：</span><input class="pwd-style" type="password" placeholder="请再次输入新密码"/>
+					<div class="warning-btn1">
+						<span class="password-warning" id="fixpwd-wrong">&nbsp;</span>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer btn-footer">
+				<button class="btn-normal" id="chg-pwd-sure">确定</button>
+				<button class="btn-shut" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--rescan弹框-->
+	 <div class="modal fade" id="rescan-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header clearfix">
+                        <span type="button" class="g-close pull-right cp" data-dismiss="modal">+</span>
+                        <div class="tx-title"><span class="modal-g">G</span>Gravity钱包</div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="address-content fc16">
+                            <p class="friend-title fcw18 mb10">rescan</p>
+                            <div class="rescan-info">
+                            	<div class="rescan-fr"><span>从：</span><input type="text" /></div>
+                            	<div class="rescan-to"><span>至：</span><input type="text" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-normal" id="rescan-btn">扫描</button>
+                    </div>
+                </div>
+            </div>
+        </div>
