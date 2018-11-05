@@ -7,11 +7,12 @@ let startGravity = () => {
 
         let startGravityResult=spawn(exe_PATH,{shell:true});
         startGravityResult.stdout.on('data', (data) => {
-            //console.log(`gravity start success: ${data}`);
-             console.log("gravity start success")
-            resolve(data);
+            //TODO
+            //console.log("Gravity启动成功！！")
         });
         startGravityResult.stderr.on('data', (data) => {
+            //TODO
+            //console.log("Gravity启动失败！！")
             console.log(`stderr: ${data}`);
             reject(data);
         });

@@ -76,7 +76,7 @@ let startWallet = (inParm) => {
         let exe_PATH = path.resolve(__dirname, exe_parm);
         let startWalletResult=spawn(exe_PATH,{shell:true});
         startWalletResult.stdout.on('data', (data) => {
-            console.log(`gwallet start success: ${data}`);
+            console.log(`gwallet启动成功: ${data}`);
 //          if (data.indexOf("<<<<<<<result=======")!==-1){
 //              console.log("data.toString",data.toString())
 //              let result=data.toString().split("=======result>>>>>>>")[1].split("<<<<<<<result=======")[0];

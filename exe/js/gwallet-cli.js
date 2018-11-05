@@ -30,7 +30,6 @@ let getHistory = (inParm) => {
         let outParm = '';
         let exe_parm = '../gravity-cli gethistory '+format.cliArgs`-m ${ inParm.fromMCI } -c ${ inParm.toMCI } -a ${ inParm.accountName }`
         let exe_PATH = path.resolve(__dirname, exe_parm);
-        console.log("cmd:", exe_parm);
         exec(exe_PATH, (err, stdout, stderr) => {
             if (err) {
                 reject(err)
@@ -74,9 +73,7 @@ let sendPayments = (inParm) => {
     return new Promise((resolve, reject) => {
         let outParm = '';
         let exe_parm = '../gravity-cli sendpayments'+' -a '+inParm.accountName+paymentAddressesParse(inParm.transactions)+format.cliArgs([' -s='],inParm.isTransaction);
-        console.log("--------------",exe_parm);
         let exe_PATH = path.resolve(__dirname, exe_parm);
-        console.log("cmd:", exe_parm);
         exec(exe_PATH, (err, stdout, stderr) => {
             if (err) {
                 reject(err)
@@ -197,7 +194,7 @@ let invokeContract= (inParm) => {
 
 let issueContract = (inParm) => {
     return new Promise((resolve, reject) => {
-        let exe_parm = '../gravity-cli issuecontractwithjson'+format.cliArgs([' -n ',' -j '],inParm.account,"\""+inParm.issueJson+"\"")+' -s='+inParm.send;//format.cliArgs([' -s='],inParm.send);
+        let exe_parm = '../gravity-cli issuecontractwithjson'+format.cliArgs([' -n ',' -j '],inParm.account,inParm.issueJson)+' -s='+inParm.send;//format.cliArgs([' -s='],inParm.send);
         let exe_PATH = path.resolve(__dirname, exe_parm);
         console.log("cmd:", exe_parm);
         exec(exe_PATH, (err, stdout, stderr) => {
