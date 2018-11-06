@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "electron .",
-    "rebuild": "electron-rebuild -f -w yourmodule",
+    "rebuild": "electron-rebuild",
     "dist": "electron-builder --mac --x64"
   },
   "keywords": [
