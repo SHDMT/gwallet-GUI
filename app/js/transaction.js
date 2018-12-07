@@ -59,12 +59,13 @@ let checkTransactionsEmpty = (transactions) =>{
 }
 let payAssets = () => {
 	$('#payAssets').off().on('click', function() {
-		let tx_lists = $('#tx_list .normal-transfer-list');
+		let tx_lists = $('#tx_list .transfer-list');
         let transactions = new Map();
         tx_lists.map(index => {
             transactions.set(format.addMark($('#tx_list' +
 				' .transaction-tx-receiver').eq(index).val().trim()), $('#tx_list .transaction-tx-amount').eq(index).val().trim());
 		})
+		console.log("-------------",transactions)
         if (checkTransactionsEmpty(transactions)){
             document.getElementById("transaction-wrong").innerHTML
             $('#transaction-wrong').text('提示：收款人和转账金额不能为空');
