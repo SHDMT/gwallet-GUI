@@ -80,7 +80,7 @@ function deployContractSubmit(data){
     $('.pwd-style').val('');
     $('#tradingPwdModal').modal('show');
     //监听关闭密码输入窗口
-    $('#tradingPwdModal').on('click', '#tx-pwd-sure', function () {
+    $('#tx-pwd-sure').off().click(function () {
         //读取数据库交易密码是否输入正确
         let txPwd = $('.pwd-style').val();
         let pwdHash = sessionStorage.getItem('pwdHash')

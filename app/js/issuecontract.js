@@ -223,6 +223,7 @@ function doIssueAsset(data) {
         "send": true
     }
 
+    console.log(">>>>>>>>send issue:", jsonData);
     gWalletData.issueContract(jsonData).then(res => {
         console.log(res)
         if (format.isBase64(res.data)) {
@@ -260,7 +261,7 @@ function bindSubmitEventListener() {
         $('.pwd-style').val('');
         $('#tradingPwdModal').modal('show');
         //监听关闭密码输入窗口
-        $('#tradingPwdModal').off().on('click', '#tx-pwd-sure', function () {
+        $('#tx-pwd-sure').off().click(function () {
             //读取数据库交易密码是否输入正确
             let txPwd = $('.pwd-style').val();
             let pwdHash = sessionStorage.getItem('pwdHash')

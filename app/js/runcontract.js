@@ -216,7 +216,8 @@ function doInvokeContract(data) {
         "invokeAmount": data[1].amount,
         "send": true
     };
-    console.log(">>>>>>>>111:", jsonData);
+
+    console.log(">>>>>>>>send invoke:", jsonData);
     gWalletData.invokeContract(jsonData).then(res => {
         if (format.isBase64(res.data)) {
             invokeContractSucceed();
@@ -240,7 +241,7 @@ function submitRunContract() {
     $('.pwd-style').val('');
     $('#tradingPwdModal').modal('show');
     //监听关闭密码输入窗口
-    $('#tradingPwdModal').off().on('click', '#tx-pwd-sure', function () {
+    $('#tx-pwd-sure').off().click(function () {
         //读取数据库交易密码是否输入正确
         let txPwd = $('.pwd-style').val();
         let pwdHash = sessionStorage.getItem('pwdHash')

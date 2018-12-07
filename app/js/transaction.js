@@ -80,7 +80,7 @@ let payAssets = () => {
             $('#tradingPwdModal').modal('toggle');
             $('#ipt-wrong').text('');
             // 监听关闭密码输入窗口
-            $('body').off('click').on('click', '#tradingPwdModal #tx-pwd-sure', function () {
+            $('#tx-pwd-sure').off().click(function () {
                 //$('#tradingPwdModal').on('click', '#tx-pwd-sure', function () {
                 //读取数据库交易密码是否输入正确
                 let txPwd = $('.pwd-style').val();
