@@ -256,7 +256,7 @@ function issueMessageOnSubmit() {
 }
 
 function bindSubmitEventListener() {
-    $('#issue-asset').off().on('click', () => {
+    $('#issue-asset').click(() => {
         $('.pwd-style').val('');
         $('#tradingPwdModal').modal('show');
         //监听关闭密码输入窗口
