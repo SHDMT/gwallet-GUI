@@ -172,7 +172,7 @@ let footerBindEvent = () => {
 			icon: $('.select-user img').attr('src')
 		}
 		//只含有汉字、数字、字母、下划线不能以下划线开头和结尾
-		let accReg = /^^(?!_)(?!.*?_$)[a-zA-Z0-9_\u4e00-\u9fa5]{1,10}$/;
+		let accReg = /^^(?!_)(?!.*?_$)[a-zA-Z0-9_\u4e00-\u9fa5]{1,16}$/;
 		//let accReg = /^[a-zA-Z]{4,16}$/;
 		if (accName == '') {
 			$('#add-acc-wran').text('提示：账户名称不能为空')
