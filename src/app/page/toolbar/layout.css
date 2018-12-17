@@ -1,0 +1,27 @@
+.toolbar-item{
+    cursor:pointer;
+    line-height:40px;
+    background:transparent;
+}
+.toolbar-item-account-panel{
+    float: right;
+    margin-right:-10px;
+}
+
+.tools-panel .tools-panel-item{
+    list-style-type:none; 
+    cursor:pointer;
+    padding:0px 15px;
+    display:inline;
+    line-height:45px;
+}
+.toolbar-item-tools-panel{
+    float:left;
+    margin-left:-40px;
+}
+.toolbar-item-tools-panel .tools-panel{
+    padding:0px;
+}
+.tools-panel .tools-panel-item svg{
+    font-size:18px;
+}

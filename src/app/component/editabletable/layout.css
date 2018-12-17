@@ -1,0 +1,5 @@
+ .editable-table-add-link{
+}
+.editable-table .ant-table-row td {
+    -webkit-user-select: text;
+}

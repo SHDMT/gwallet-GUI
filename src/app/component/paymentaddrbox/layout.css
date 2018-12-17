@@ -1,0 +1,15 @@
+.paymentaddr-box-extra{
+    margin:10px 0px 0px 10px;
+}
+.paymentaddr-input-unit{
+    padding-top:3px;
+}
+.paymentaddr-input-btn{
+    margin-right:10px;
+}
+.paymentaddr-input-row{
+    margin-bottom:10px;
+}
+.paymentaddr-input .paymentaddr-input-row .ant-form-item{
+    margin-bottom:0px;
+}

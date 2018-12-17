@@ -1,63 +1,11 @@
-# Gravity wallet App
+# React + Electron = 😍
 
-Gravity 是一种新型底层公有链分布式账本系统。它采用新型的 DAG(Directed Acyclic Graph)存储和共识方案，以及基于 DAG 的智能合约方案设计。不仅可以实现在 Gravity 网络上交易的快速落账以及数据的及时共享，而且可以在该平台上灵活地开发去中心化的应用程序(DApp)。此外，Gravity 还实现了公有链和联盟链之间的跨链技术，打通了链之间价值交换的通道。Gravity 致力于打造全球交易的生态系统，目标是为全球市场提供低成本，高效率的去中心化服务。Gravity wallet app是Gravity钱包的图形化界面应用程序，提供了交易，交易历史管理，账户管理，联系人管理，资产管理等功能。
+An example of using create-react-app and Electron.  
+Made by [Kitze](https://twitter.com/thekitze).
 
-Gravity具有的特色包括：
+## Scripts
+```yarn start``` will start the Electron app and the React app at the same time.  
+```yarn build``` will build the React app and package it along the Electron app.
 
-- 即时上链，高速确认交易（≤ 7s）
-
-- 去中心化的有向无环图
-
-- 开创性的双链结构设计
-
-- 基于有向无环图的高速智能合约
-
-- 理论无上限的TPS
-
-- 高效安全的跨链协议
-
-- 面向未来的抗量子签名算法
-
-- 高效灵活的系统架构设计
-
-
-## 支持平台
-
-Gravity能够在如下平台中运行：
-
-- Windows 10
-
-- macOS 10 (暂未开放)
-
-- Ubuntu 16.10 (暂未开放)
-
-- Docker
-
-
-## 区块链私链搭建教程
-
-
-
-## 钱包GUI编译指南
-
-​	https://github.com/SHDMT/gwallet-GUI/wiki
-
-
-
-
-
-## 开发团队
-
-上海丹珠秘源信息科技有限公司是一家以区块链技术为背景的信息科技创新公司，致力于区块链技术的研发与应用创新，总部位于上海。
-
-公司拥有强大的学术研究背景、调研咨询背景、技术研发实力和公司管理经营能力，携手来自工信部的区块链标准制定专家、上海交通大学密码与计算研究领域的资深教授和来自金融交易市场的资深交易顾问组成的顾问团队，和由IBM的技术专家、区块链技术经验丰富的系统架构师、应用架构师以及对区块链技术挚爱的极客研发人员组成的核心技术团队，致力于为各个行业用户提供基于区块链的产品策划、研发、测试、运营、维护的一整套行业深度解决方案。针对不同产业的具体需求，深度熟悉行业痛点和用户习惯，为众多的机构用户提供服务。
-
-公司现已研发了拥有新型共识组合机制，基于DAG结构的公有链底层系统——Dazzle Gravity，同时自主研发设计完成一套完全自主可控的联盟链底层系统ApeChain，并已交付了基于此联盟链系统的业务存证场景应用。同时，公司正着手于安全多方计算的算法开发，构建在隐私保护前提下的大数据计算服务平台。
-
-丹珠秘源开发团队以雄厚的技术实力、创新能力、以及专业、高效、高质的产品落地能力，已成为中国信通院可信区块链联盟理事成员，并与国安硅谷实验室达成战略合作，是国内及国际的区块链及安全多方计算技术服务的领军企业。
-
-
-
-## 开源支持
-
-GNU
+## Read more
+You can read more about it in [my Medium article](https://medium.com/@kitze/%EF%B8%8F-from-react-to-an-electron-app-ready-for-production-a0468ecb1da3).

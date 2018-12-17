@@ -1,0 +1,281 @@
+syntax ="proto3";
+
+package walletrpc;
+
+service WalletService{
+    rpc GetBalance(BalanceRequest) returns (BalanceResponse);
+    rpc ListTX(ListTXRequest) returns (ListTXResponse);
+    rpc SendPayment(SendPaymentRequest) returns (SendPaymentResponse);
+    rpc SendText(SendTextRequest) returns (SendTextResponse);
+    rpc InvokeContract(InvokeContractRequest) returns (InvokeContractResponse);
+    rpc IssueAsset(IssueAssetRequest) returns (IssueAssetResponse);
+    rpc DeployContract(DeployContractRequest) returns (DeployContractResponse);
+    rpc AddAccount(AddAccountRequest) returns (AddAccountResponse);
+    rpc UpdateAccount(UpdateAccountRequest) returns (UpdateAccountResponse);
+    rpc ListAccounts(ListAccountRequest) returns (ListAccountResponse);
+    rpc GetNewAddress(NewAddressRequest) returns (NewAddressResponse);
+    rpc ListUserAddresses(ListUserAddressesRequest) returns (ListUserAddressesResponse);
+    rpc RescanWallet(RescanWalletRequest) returns (RescanWalletResponse);
+    rpc ChangePassword(ChangePasswordRequest) returns (ChangePasswordResponse);
+    rpc ImportPrivateKey(ImportPrivateKeyRequest) returns (ImportPrivateKeyResponse);
+    rpc LockWallet(LockWalletRequest) returns (LockWalletResponse);
+    rpc UnlockWallet(UnlockWalletRequest) returns (UnlockWalletResponse);
+    rpc GetWalletVersionInfo(WalletVersionInfoRequest) returns
+    (WalletVersionInfoResponse);
+    rpc GetAllAssets(GetAllAssetsRequest) returns (GetAllAssetsResponse);
+    rpc CalcPaymentFee(CalcPaymentFeeRequest) returns (CalcPaymentFeeResponse);
+    rpc CalcTextFee(CalcTextFeeRequest) returns (CalcTextFeeResponse);
+    rpc CalcInvokeContractFee(CalcInvokeContractFeeRequest) returns (CalcInvokeContractFeeResponse);
+    rpc CalcIssueAssetFee(CalcIssueAssetFeeRequest) returns (CalcIssueAssetFeeResponse);
+    rpc CalcDeployContractFee(CalcDeployContractFeeRequest) returns (CalcDeployContractFeeResponse);
+    rpc ExportPrivateKey(ExportPrivateKeyRequest) returns (ExportPrivateKeyResponse);
+    rpc WalletIsSynced(WalletSyncedRequest) returns (WalletSyncedResponse);
+}
+
+
+message AssetBalance{
+    string  assetName = 1;
+    string  assetTotal=2;
+    string  assetSpendable=3;
+    string  assetUnconfirmed =4;
+}
+
+message AccountBalance{
+    string  balanceAccountName =1 ;
+    repeated AssetBalance balanceAsset   = 2;
+}
+
+message BalanceRequest{
+    string accountName = 1;
+    string assetHash = 2;
+}
+message BalanceResponse{
+    repeated  AccountBalance balances =1;
+}
+
+message ListTXRequest{
+    string accountName = 1;
+    uint32 count = 2;
+}
+message Input{
+    string address = 1;
+    uint64 amount = 2;
+    bool isMe = 3;
+}
+message Output{
+    string address = 1;
+    uint64 amount = 2;
+    bool isMe = 3;
+}
+
+message MsgDetail{
+    string msgType = 1;
+    repeated Input inputs = 2;
+    repeated Output outputs = 3;
+    string extends = 4;//其他类型的数据
+}
+message Transation{
+    int64 timeStamps = 1;
+    string unitHash = 2;
+    uint32 isStable = 3;//1:稳定，2：不稳定
+    int64 state = 4;//1：收钱 2：花钱 3：资产交换 4：无资产变动（如发送text，发布资产）
+    string unitType = 5;//只有payment时，为payment；如有其他的，为其他的；两种以上其他的，为混合
+    int64 balance = 6;//收支，如 -500
+    uint64 fee = 7;//交易费
+    repeated MsgDetail msgDetails = 8;
+}
+message ListTXResponse{
+    repeated Transation transations = 1;
+}
+
+
+message SendPaymentRequest{
+    string accountName = 1;
+    repeated string addresses = 2;
+    repeated uint64 amounts = 3;
+}
+message SendPaymentResponse{
+    string unitHash = 1;
+}
+
+message SendTextRequest{
+    string accountName = 1;
+    string text = 2;
+}
+message SendTextResponse{
+    string unitHash = 1;
+}
+
+message InvokeContractRequest{
+    string accountName = 1;
+    string assetName = 2;
+    string invokeJson = 3;
+    uint64 amount = 4;
+}
+message InvokeContractResponse{
+    string unitHash = 1;
+}
+
+message IssueAssetRequest{
+    string accountName = 1;
+    string issueJson = 2;
+}
+message IssueAssetResponse{
+    string unitHash = 1;
+}
+
+message DeployContractRequest{
+    string accountName = 1;
+    string deployJson = 2;
+}
+message DeployContractResponse{
+    string unitHash = 1;
+}
+
+message AddAccountRequest{
+    uint32 accountType = 1;//0：普通账户；1：抗量子账户
+    string accountName = 2;
+}
+message AddAccountResponse{
+    string address = 1;
+}
+
+message UpdateAccountRequest{
+    string oldAccountName = 1;
+    string newAccountName = 2;
+}
+message UpdateAccountResponse{
+    bool result = 1;
+}
+
+message ListAccountRequest{}
+message AccountNamesWithType{
+    string accountName = 1;
+    uint32 accountType = 2;
+}
+message ListAccountResponse{
+    repeated AccountNamesWithType accountNamesWithTypes = 1;
+}
+
+message NewAddressRequest{
+    string accountName = 1;
+}
+message NewAddressResponse{
+    string address = 1;
+}
+
+message ListUserAddressesRequest{
+    string accountName = 1;
+}
+message ListUserAddressesResponse{
+     repeated string addresses = 1;
+}
+
+message RescanWalletRequest{}
+message RescanWalletResponse{
+    uint64 status = 1;
+}
+
+message ChangePasswordRequest{
+    string oldPassword = 1;
+    string newPassword = 2;
+}
+message ChangePasswordResponse{
+    bool result = 1;
+}
+
+message ImportPrivateKeyRequest{
+    string privkey = 1;
+}
+message ImportPrivateKeyResponse{
+    string address = 1;
+}
+
+message LockWalletRequest{
+    string password = 1;
+}
+message LockWalletResponse{
+    bool result = 1;
+}
+
+message UnlockWalletRequest{
+    string password = 1;
+}
+message UnlockWalletResponse{
+    bool result = 1;
+}
+
+message WalletVersionInfoRequest{}
+message WalletVersionInfoResponse{
+    float gwalletVersion = 1;
+}
+
+message WalletSyncProgressRequest{}
+message WalletSyncProgressResponse{
+    float score = 1;
+}
+
+message GetAllAssetsRequest{
+    string accountName = 1;
+}
+message GetAllAssetsResponse{
+    map<string,string> asset = 1;
+}
+
+message CalcPaymentFeeRequest{
+    string accountName = 1;
+    string assetName = 2;
+    repeated string addresses = 3;
+    repeated uint64 amounts = 4;
+}
+message CalcPaymentFeeResponse{
+    uint32 txBytes = 1;
+}
+
+message CalcTextFeeRequest{
+    string accountName = 1;
+    string text = 2;
+}
+message CalcTextFeeResponse{
+    uint32 txBytes = 1;
+}
+
+message CalcInvokeContractFeeRequest{
+    string accountName = 1;
+    string assetName = 2;
+    string invokeJson = 3;
+    uint64 amount = 4;
+}
+message CalcInvokeContractFeeResponse{
+    uint32 txBytes = 1;
+}
+
+message CalcIssueAssetFeeRequest{
+    string accountName = 1;
+    string issueJson = 2;
+}
+message CalcIssueAssetFeeResponse{
+    uint32 txBytes = 1;
+}
+
+message CalcDeployContractFeeRequest{
+    string accountName = 1;
+    string deployJson = 2;
+}
+message CalcDeployContractFeeResponse{
+    uint32 txBytes = 1;
+}
+
+message ExportPrivateKeyRequest{
+    string address = 1;
+}
+message ExportPrivateKeyResponse{
+    string privateKey = 1;
+}
+
+message WalletSyncedRequest{
+}
+
+message WalletSyncedResponse{
+    bool synced     = 1;
+}

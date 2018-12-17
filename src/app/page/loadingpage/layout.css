@@ -1,0 +1,9 @@
+.loading-page{
+    height:100%;     
+}
+
+.loading-page .ant-progress-outer{
+    height:100%;
+    width:50%;
+    margin:0 auto;
+}

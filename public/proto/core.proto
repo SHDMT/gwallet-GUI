@@ -1,0 +1,92 @@
+syntax ="proto3";
+
+package corerpc;
+
+service CoreService{
+    rpc GetBlockChainInfo(BlockChainInfoRequest) returns (BlockChainInfoResponse);
+    rpc GetPeerList(PeerListRequest) returns (PeerListResponse);
+    rpc GetNetworkStatus(NetworkStatusRequest) returns (NetworkStatusResponse);
+    rpc GetGravityVersionInfo(GravityVersionInfoRequest) returns (GravityVersionInfoResponse);
+    rpc CoreSyncProgress(CoreSyncProgressRequest) returns (CoreSyncProgressResponse);
+    rpc ListContractsByAsset(ListContractsByAssetRequest) returns (ListContractsByAssetResponse);
+    rpc ListContracts(ListContractsRequest) returns (ListContractsResponse);
+    rpc ContractDetail(ContractDetailRequest) returns (ContractDetailResponse);
+}
+
+message BlockChainInfoRequest{}
+message LastBlockWithSolution{
+    string IP= 1;
+    string PK=2;
+}
+message BlockChainInfoResponse{
+    uint64 currentMCI = 1;
+    uint32 currentHeight = 2;
+    string lastKeyUnitHash = 3;
+    repeated LastBlockWithSolution lastBlockInfo = 4;
+}
+
+message Peer{
+    string IP = 1;
+    string port = 2;
+    string isInbound = 3;
+}
+message PeerListRequest{}
+message PeerListResponse{
+    repeated Peer peers = 1;
+}
+
+message NetworkStatusRequest{}
+message NetworkStatusResponse{
+    float score = 1;
+}
+
+message GravityVersionInfoRequest{}
+message GravityVersionInfoResponse{
+    float version = 1;
+    uint32 netType = 2;
+}
+
+message CoreSyncProgressRequest{}
+message CoreSyncProgressResponse{
+    float score = 1;
+}
+
+message ContractDefWithName{
+    string address = 1;
+    repeated string paramsKey = 2;
+    repeated bytes paramsValue = 3;
+    string name = 4;
+}
+message ListContractsByAssetRequest{
+    string assetHash = 1;
+}
+message ListContractsByAssetResponse{
+    repeated ContractDefWithName contracts = 1;
+}
+
+message ContractWithName{
+    string address = 1;
+	string name = 2;
+}
+message ListContractsRequest{}
+message ListContractsResponse{
+    repeated ContractWithName contracts = 1;
+}
+
+message Contract {
+    uint32 version = 1;
+    string name = 2;
+    uint32 scriptCode = 3;
+    bool isRestrict = 4;
+    string code = 5;
+    repeated string paramsKey = 6;
+    repeated string paramsNote = 7;
+    string Address = 8;
+    string note = 9;
+}
+message ContractDetailRequest{
+    string contractHash = 1;
+}
+message ContractDetailResponse{
+    Contract contractDetail = 1;
+}

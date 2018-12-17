@@ -1,0 +1,116 @@
+.login-page,
+.login-page .steps-content,
+.login-page .introgravity,
+.login-page .introgravity > .ant-row,
+.login-page .intro-gravity,
+.login-page .intro-gravity > .ant-carousel {
+  height: 100%;
+}
+.login-page .intro-gravity > .ant-carousel {
+  background-color: #c3c3c3;
+}
+.login-page .steps-content > div {
+  height: 100%;
+}
+.pr_6 {
+  padding-right: 6px;
+}
+.login-page .steps-action {
+  position: fixed;
+  bottom: 32px;
+  right: 62px;
+}
+.login-page .steps-action .ant-btn{
+  margin:0px 5px;
+}
+
+.login-page .select-language {
+  text-align: center;
+}
+.login-page .gravity-title {
+  text-align: center;
+  font-size: 32px;
+  padding-top: 90px;
+}
+.login-page .login-intro {
+  padding: 20px 0 16px 0px;
+}
+.setPsd .setpsdinput {
+  text-align: center;
+  padding-top: 60px;
+}
+.introgravity .gravity-mean,
+.introgravity .wallet-mean,
+.introgravity .your-seckey,
+.introgravity .friend-reminder {
+  padding: 50px 30px;
+}
+.introgravity .ant-carousel .slick-dots {
+  position: absolute;
+  bottom: -126px;
+  list-style: none;
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 3px;
+}
+.introgravity .ant-carousel .slick-dots li.slick-active button {
+  background: #fff;
+  opacity: 1;
+  width: 10px;
+  border-radius: 50%;
+}
+.introgravity .ant-carousel .slick-dots li button {
+  width: 10px;
+  height: 10px;
+}
+.introgravity .ant-carousel .slick-dots li {
+  margin: 0px 12px;
+}
+
+.login-page .walletseed,
+.login-page .reseed,
+.login-page .importseed {
+  padding: 60px 20px;
+}
+.login-page .setPsd {
+  padding: 60px;
+}
+.login-page .setPsd .surepsd {
+  margin-top: 18px;
+}
+.logingravity .logingratitle {
+  padding: 40px 30px;
+}
+.logingravity .logingrapsd {
+  padding-top: 36px;
+  text-align: center;
+}
+.logingravity .logingra-title{
+  text-align: center;
+  font-size: 28px;
+  padding: 60px 0 20px 0;
+}
+.logingravity .logingra-tro{
+  padding: 0 16px;
+}
+.createwallet-panel{
+  
+}
+.createwallet-panel .createwallet-panel-content{
+  height:100%;
+}
+.createwallet-panel .createwallet-panel-content .ant-row{
+  height:100%;
+  margin-top:10%
+}
+.createwallet-panel .createwallet-panel-item h1{
+  margin:0px;
+  padding:0px;
+}
+.createwallet-panel .createwallet-panel-item{
+  text-align: center;
+  cursor:pointer;
+}

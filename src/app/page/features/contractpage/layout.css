@@ -1,0 +1,115 @@
+.steps-content {
+    margin-top: 16px;
+    border: 1px dashed #e9e9e9;
+    border-radius: 6px;
+    background-color: #fafafa;
+    min-height: 200px;
+    /* text-align: center; */
+    /* padding-top: 80px; */
+  }
+  
+  .steps-action {
+    margin-top: 24px;
+  }
+  .contract-area{
+    padding:0px 5px;
+  }
+  .contract-area .invokecontract-balanceasset{
+    float:right;
+    margin-bottom:5px;
+  }
+  .contract-area .balance-group{
+    clear:both;
+    margin-bottom:15px;
+  }
+  .contract-area .invokecontract-panel .invokecontract-form-panel .invokecontract-form-item{
+    margin-bottom:15px;
+  }
+  .contract-area .invokecontract-panel .invokecontract-submit-btn{
+    clear:both;
+    float:right;
+    margin: 10px 25px;
+  }
+  .contract-area .invokecontract-panel .txfee-label{
+    float:right;
+    margin: 10px 35px;
+  }
+  .contract-area .invokecontract-panel .invokecontract-form-item .invokecontract-form-title-params{
+    display:inline-block;
+    margin-bottom:5px;
+  }
+  .contract-area .invokecontract-panel .invokecontract-form-basic-card{
+    margin-bottom:15px;
+  }
+  
+  .contract-area .issueasset-panel .issueasset-submit-btn{
+    clear:both;
+    float:right;
+    margin: 10px 25px;
+  }
+  .contract-area .issueasset-panel .txfee-label{
+    float:right;
+    margin: 10px 35px;
+  }
+  .contract-area .issueasset-panel .issueasset-form-item{
+      margin: 10px 0px;
+  }
+  .contract-area .issueasset-panel .issueasset-form-item .issueasset-form-input{
+      width:150px;
+  }
+  .contract-area .issueasset-panel .issueasset-form-item .issueasset-form-title-note{
+      display:inline-block;
+      margin-bottom:10px;
+  }
+  .contract-area .issueasset-panel .issueasset-form-basic-card{
+    margin-bottom:15px;
+  }
+
+  .contract-area .issueasset-panel .configcontract-box-outer-card{
+    margin-top:25px;
+  }
+  .contract-area .issueasset-panel .configcontract-box-inner-card{
+    margin-right:10px;
+    margin-bottom:10px;
+    float:left;
+  }
+  .contract-area .issueasset-panel .configcontract-box-inner-card .configcontract-box-inner-content{
+    height:100px;
+  }
+  .contract-area .issueasset-panel .configcontract-box-inner-card .configcontract-box-inner-add{
+    height:203px;
+    font-size:50px;
+    line-height:203px;
+    text-align: center;
+    cursor:pointer;
+  }
+  .contract-area .issueasset-panel .configcontract-box-inner-card-first:hover{
+    color:#999;
+  }
+
+  .contract-area .deploycontract-panel .deploycontract-submit-btn{
+    clear:both;
+    float:right;
+    margin: 10px 25px;
+  }
+
+  .contract-area .deploycontract-panel .txfee-label{
+    float:right;
+    margin: 10px 35px;
+  }
+  .contract-area .deploycontract-panel .deploycontract-upload-item{
+    clear:both;
+  }
+
+  .contract-area .params-input-row{
+      margin-bottom:10px;
+  }
+  .contract-area .params-input-row .ant-input{
+    width:80%;
+  }
+  .contract-area .editcontract-modal-item{
+    margin-bottom:15px;
+  }
+  .ant-modal-body .editcontract-modal-item .ant-row.ant-form-item{
+    margin-bottom: 0px;
+  }

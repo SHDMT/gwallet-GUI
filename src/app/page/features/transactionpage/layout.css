@@ -1,0 +1,12 @@
+.transaction-area .paymentaddr-box{
+    margin-top:10px;
+}
+.transaction-area .txfee-label{
+    float:right;
+    margin-right:60px;
+}
+.transaction-send-btn{
+    clear:right;
+    float: right;
+    margin: 15px 55px;
+}

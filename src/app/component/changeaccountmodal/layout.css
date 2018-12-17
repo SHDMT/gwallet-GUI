@@ -1,0 +1,14 @@
+.changeaccount-modal-content .accountavatar-panel{
+    cursor:pointer;
+    display:inline-block;
+    margin:0px 10px;
+}
+.changeaccount-modal-content .accountavatar-panel .ant-badge{
+    margin: 0px 10px;
+}
+.changeaccount-modal-content .ant-avatar-image{
+    display:block;
+}
+.changeaccount-modal-content .accountavatar-panel .accountavatar-accountname{
+    text-align: center;
+}
