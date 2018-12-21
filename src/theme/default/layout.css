@@ -1,0 +1,15 @@
+.app-content{
+    height:100%;
+}
+.footer{
+    padding: 0px;
+    height:20px;
+    min-height:20px;
+}
+.header{
+    height:40px;
+    min-height:40px;
+}
+.content{
+    padding:15px;
+}

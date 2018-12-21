@@ -1,0 +1,10 @@
+.gutter-box {
+  padding: 5px 0;
+}
+.gutter-row {
+  padding-top: 7px;
+}
+
+.changepwdmodal .ant-form-item-control {
+  line-height: 0px;
+}

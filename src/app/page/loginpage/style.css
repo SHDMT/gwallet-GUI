@@ -1,0 +1,28 @@
+.createwallet-panel .createwallet-panel-item:hover {
+  transform: scale(1.2, 1.2);
+  transition: all 0.3s;
+}
+.setPsd .ant-form-item {
+  margin-bottom: 0px;
+}
+.setPsd .ant-form-item-control {
+  line-height: 0px;
+}
+.logingravity .ant-form-item {
+  margin-bottom: 0px;
+}
+.logingravity .ant-form-item-control {
+  line-height: 0px;
+}
+.logingravity .has-error .ant-form-explain,
+.logingravity .has-error .ant-form-split {
+  color: #f5222d;
+  float: left;
+  padding-left: 28px;
+}
+.setPsd .has-error .ant-form-explain,
+.setPsd .has-error .ant-form-split {
+  color: #f5222d;
+  float: left;
+  padding-left: 16px;
+}

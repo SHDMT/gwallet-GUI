@@ -1,0 +1,57 @@
+{
+    "invoke":{
+        "Header": {
+            "App": 3,
+            "Version": 1,
+            "PayloadHash": ""
+        },
+        "Asset": "gSSDPG9dHRAGi20iPIZnhtSbdysSAGuTSnoejBBPRgw=",
+        "ContractAddr": "s5g3TYDFrUwBgVe6eq1iaImWn5AJWZpJj9lRkq7XYzw=",
+        "GlobalParamKey": [],
+        "Outputs": [
+            {
+                "Amount": 123,
+                "Extends": "",
+                "OutputParamsKey": [
+                    "addr"
+                ],
+                "OutputParamsValue": [
+                    "abcccccc"
+                ],
+                "Restricts": []
+            }
+        ]
+    },
+    "issue":{
+        "Meta": {
+            "Header": {
+                "App": 4,
+                "Version": 1,
+                "PayloadHash": ""
+            },
+            "Name": "bbb",
+            "Cap": 123,
+            "FixedDenominations": true,
+            "Denominations": [
+                5,
+                10
+            ],
+            "AllocationAddr": [
+                "abcccccddddd",
+                "bbbddd"
+            ],
+            "AllocationAmount": [
+                123123,
+                33333
+            ],
+            "Contracts": [
+                {
+                    "Address": "s5g3TYDFrUwBgVe6eq1iaImWn5AJWZpJj9lRkq7XYzw=",
+                    "ParamsKey": [],
+                    "ParamsValue": []
+                }
+            ]
+        },
+        "Note": "abagbababab"
+    }
+}

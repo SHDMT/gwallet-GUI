@@ -1,0 +1,35 @@
+.paymentconfirm-modal-content{
+    padding:10px;
+    height:300px;
+    overflow: scroll;
+}
+.paymentconfirm-modal-content .paymentconfirm-label-item-title{
+    display:inline-block;
+    width:80px;
+    text-align:right;
+}
+.paymentconfirm-modal-content .paymentconfirm-label-value{
+    display:inline-block;
+    padding-right:5px;
+}
+.paymentconfirm-label-item-addrtitle{
+    vertical-align: top;
+}
+.paymentconfirm-modal-content .paymentconfirm-label-item{
+    margin: 15px 0px;
+}
+.paymentconfirm-modal-content .paymentconfirm-label-item.first{
+    margin:0px 0px;
+}
+.paymentconfirm-modal-content .ant-form-item{
+    margin-bottom:0px;
+}
+.paymentconfirm-modal-content .paymentconfirm-label-totalamount{
+    font-size:20px;
+    font-weight: bold;
+}
+.paymentconfirm-modal-content .paymentconfirm-password-title{
+    float:left;
+    margin-top:8px;
+    margin-right:2px;
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Gravity",
+    "version": 1.0,
+    "assetUnit": "N",
+    "walletBinary": "gwallet",
+    "coreBinary": "gravity"
+}

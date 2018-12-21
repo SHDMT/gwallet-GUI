@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "App": 2,
+        "Version": 1,
+        "PayloadHash": "cOjno758kpOso2p6LYatiAnhxLnKEmXrCDFEWU34Tew="
+    },
+    "Contracts": [
+        {
+            "Meta": {
+                "Version": 1,
+                "Name": "测试合约",
+                "ScriptCode": 1,
+                "IsRestrict": false,
+                "Code": "CgkJKHByaW50ICJIZWxsbyIpCgkJKD09IDEgMSkKCQ==",
+                "ParamsKey": [],
+                "ParamsNote": [],
+                "Address": "fOlRM+er9qLKrVLcsdpr7kjmXEmhoaFYBSlCRmcORRg=",
+                "Note": null
+            },
+            "Code": "\n\t\t(print \"Hello\")\n\t\t(== 1 1)\n\t",
+            "Note": ""
+        }
+    ]
+}

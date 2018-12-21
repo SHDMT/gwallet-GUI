@@ -1,52 +1,59 @@
 {
-  "name": "Grivaty_wallet",
-  "version": "1.0.0",
-  "description": "Wallet using electron",
-  "main": "main.js",
+  "name": "universal-wallet",
+  "description": "CRA + Electron sitting in a tree",
+  "author": "Kitze",
+  "version": "0.2.7",
+  "private": true,
+  "dependencies": {
+    "antd": "^3.10.3",
+    "aws-sdk": "^2.339.0",
+    "cross-env": "5.1.6",
+    "echarts": "^4.2.0-rc.2",
+    "echarts-for-react": "^2.0.15-beta.0",
+    "electron-is-dev": "^1.0.1",
+    "electron-log": "^2.2.6",
+    "electron-rebuild": "^1.8.2",
+    "google-protobuf": "^3.6.1",
+    "grpc": "^1.16.0",
+    "grpc-tools": "^1.6.6",
+    "js-sha256": "^0.9.0",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
+    "node-gyp": "^3.8.0",
+    "npmlog": "^4.1.2",
+    "pubsub-js": "^1.7.0",
+    "react": "16.4.0",
+    "react-dom": "16.4.0",
+    "recharts": "^1.4.0",
+    "sequelize": "^4.41.0",
+    "sqlite3": "^4.0.4",
+    "update-electron-app": "^1.2.0"
+  },
+  "devDependencies": {
+    "concurrently": "3.5.1",
+    "electron": "1.4",
+    "electron-builder": "^20.15.1",
+    "electron-prebuilt": "^1.4.13",
+    "prettier": "^1.4.4",
+    "react-scripts": "1.1.4",
+    "wait-on": "2.1.0"
+  },
   "build": {
-    "appId": "com.dzmy.app",
-    "mac": {
-      "target": [
-        "dmg",
-        "zip"
-      ]
-    },
-    "win": {
-      "target": [
-        "nsis",
-        "zip"
-      ]
+    "publish": {
+      "provider": "github"
     }
   },
+  "main": "public/electron.js",
+  "homepage": "./",
   "scripts": {
-    "start": "electron .",
-    "rebuild":"electron-rebuild -f -w sqlite3",
-    "dist": "electron-builder --mac --x64"
-  },
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
-  ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
-  "devDependencies": {
-    "electron": "^2.0.0",
-    "electron-builder": "^20.28.2",
-    "electron-packager": "^12.1.2",
-    "electron-rebuild": "^1.8.2"
-  },
-  "dependencies": {
-    "ejs": "^2.6.1",
-    "electron-json-config": "^1.5.3",
-    "electron-settings": "^3.2.0",
-    "qrcode": "^1.2.2",
-    "sqlite3": "^4.0.3"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/SHDMT/gwallet-GUI"
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "react-test": "react-scripts test --env=jsdom",
+    "react-eject": "react-scripts eject",
+    "electron-build": "electron-builder",
+    "rebuild": "electron-rebuild",
+    "release": "yarn react-build && electron-builder --publish=always",
+    "build": "yarn react-build && yarn electron-build",
+    "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
   }
 }

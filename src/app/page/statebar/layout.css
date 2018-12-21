@@ -1,0 +1,23 @@
+.blockchain-info-label{
+    list-style-type:none; 
+    margin:0px;
+    float:right;
+}
+.blockchain-info-label li{
+    display:inline;
+    margin:0px 0px 0px 20px;
+}
+.netstatus-label{
+    float:right;
+}
+.statebar-area>div{
+    margin:0px 20px;
+}
+.sync-processor{
+    float:left;
+    width: 100px;
+}
+.netstatus-label{
+    width:100px;
+    text-align:right;
+}

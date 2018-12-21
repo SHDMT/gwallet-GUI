@@ -1,0 +1,7 @@
+div{
+  -webkit-user-select: none;  /* Chrome 49+ */
+  cursor:default;
+}
+::-webkit-scrollbar {
+  width: 2px;
+}

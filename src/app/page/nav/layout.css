@@ -1,0 +1,30 @@
+.navpage-area .navpage-list{
+    padding:0px;
+}
+.navpage-area .navpage-item{
+    list-style-type:none; 
+    cursor:pointer;
+    padding:10px 15px;
+}
+.navpage-area .navpage-item-icon{
+    height:25px;
+    display:inline;
+}
+.navpage-area .navpage-item-name{
+    display:inline;
+    margin:0px 15px;
+}
+.navpage-logo-icon{
+    height:48px;
+    margin-bottom: 14px;
+    margin-right: 6px;
+}
+.navpage-logo-title{
+    font-size:32px;
+    line-height:40px;
+    display:inline-block;
+    padding-top:10px;
+}
+.navpage-logo{
+    margin:10px 10px;
+}

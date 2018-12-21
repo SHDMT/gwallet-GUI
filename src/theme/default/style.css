@@ -1,0 +1,90 @@
+#root{
+    overflow: hidden;
+}
+.header{
+    background:rgb(240, 242, 245);
+    border-bottom:1px solid #e8e8e8;
+}
+.sider{
+    background:rgb(240, 242, 245);
+    border-right:1px solid #e8e8e8;
+}
+
+.footer{
+    background:rgb(20, 73, 122);
+}
+.app-content{
+    background:rgb(236, 236, 236);
+    font-family: "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif,
+                "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.app-content p{
+    font-family: "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif,
+                "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.app-content tbody{
+    background:#fff;
+}
+
+.text-style-normal{
+    font-family: "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif,
+                "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size:14px;
+    line-height: 22px;
+    color:#dfdfdf;
+}
+
+.text-style-small{
+    font-family: "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif,
+                "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color:#dfdfdf;
+    font-size:12px;
+    line-height: 20px;
+}
+
+/*ToolBar area*/
+.tools-panel .tools-panel-item svg{
+    transition: all .3s;
+}
+.tools-panel .tools-panel-item svg:hover{
+    transform: scale(1.6, 1.6);
+    transition: all .3s;
+}
+.account-panel{
+    transition: all .2s;
+}
+
+.account-panel-menu-area .ant-menu-light{
+    background:#f8f8f8;
+}
+
+/*Navbar area*/
+.navpage-area .ant-menu{
+    border-right:0px;
+}
+
+
+/*Statebar area*/
+.statebar-area .ant-progress-text{
+    color:#dfdfdf;
+}
+
+.recenttx-table .recordbalance.income{
+    color:#449944;
+}
+.recenttx-table .recordbalance.outcome{
+    color:#994444;
+}
+.networkstate-good{
+    color:#66cc66;
+}
+.networkstate-bad{
+    color:#cc6666;
+}
+.networkstate-medium{
+    color:#cccc66;
+}
+.networkstate-disconnected{
+    color:#992222;
+}

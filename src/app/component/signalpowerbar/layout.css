@@ -1,0 +1,21 @@
+.netstate-power{
+    width:10px;
+    border: 4px solid #999;
+    display:inline-block;
+    border-radius: 5px;
+}
+.netstate .power0{
+    height:10px;
+}
+.netstate .power1{
+    height:20px;
+}
+.netstate .power2{
+    height:30px;
+}
+.netstate .power3{
+    height:40px;
+}
+.netstate-power.power-on{
+    background:#999;
+}

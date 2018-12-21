@@ -1,0 +1,9 @@
+.rpctest-success{
+    color:darkgreen;
+}
+.rpctest-failed{
+    color:darkred;
+}
+.rpctest-area .debug-info{
+    margin-top:20px;
+}
