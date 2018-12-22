@@ -148,7 +148,7 @@ class IssueAssetFormPanel extends Component {
                 this.setState({
                     isSubmitLoading: false,
                     showPasswordModal: true,
-                    txAmount: res.data.txBytes,
+                    txAmount: 0,
                     txFee: res.data.txBytes
                 });
             }else{

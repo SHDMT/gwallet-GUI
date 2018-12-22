@@ -91,9 +91,6 @@ class InvokeContractConfirmModal extends Component {
             </div>
           </div>
           <div className="paymentconfirm-label-item">
-            <span className="paymentconfirm-label-item-title">交易金额：</span><span className="paymentconfirm-label-value">{this.props.txAmount}</span>{this.props.assetUnit}
-          </div>
-          <div className="paymentconfirm-label-item">
             <span className="paymentconfirm-label-item-title">交易费：</span><span className="paymentconfirm-label-value">{this.props.txFee}</span>{this.props.assetUnit}
           </div>
           <div className="paymentconfirm-label-item">

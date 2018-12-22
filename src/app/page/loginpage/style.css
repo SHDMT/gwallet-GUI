@@ -26,3 +26,10 @@
   float: left;
   padding-left: 16px;
 }
+
+.login-page .ant-spin-nested-loading{
+  height:100%;
+}
+.login-page .ant-spin-nested-loading .ant-spin-container{
+  height:100%;
+}

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import provider from "../../dataproviderclient";
-import { Steps, Button, message } from "antd";
+import { Steps, Button, message, Spin } from "antd";
 // import SelectLanguage from "./selectlanguage";
 import IntroGravity from "./introgravity";
 import SetAndReWallet from "./setandrewallet";
@@ -18,6 +18,7 @@ class LoginPageView extends Component {
     this.state = {
       current: 0,
       status: 1,
+      waitting: false,
       pwd: "",
       loginpwd: "",
       surepwd: "",
@@ -28,6 +29,7 @@ class LoginPageView extends Component {
     };
   }
   componentWillMount() {
+    provider.request("startcore");
     provider.requestWithResponse("isnewuser", {}, res => {
       if (res.status === 200) {
         const { current } = this.state;
@@ -117,40 +119,52 @@ class LoginPageView extends Component {
         seed: seed,
         password: pwd
       };
+      this.setState({
+        waitting: true
+      });
       provider.requestWithResponse(
         "setnewwalletpassword",
         walletpassword,
         res => {
           if (res.status === 200) {
+            const current = this.state.current + 1;
             this.setState({
-              walletseedpwd: res.data
+              walletseedpwd: res.data,
+              waitting: false,
+              current:current
             });
+            
           } else {
             console.log(res);
             message.error("设置密码失败!");
           }
         }
       );
-      const current = this.state.current + 1;
-      this.setState({ current });
+      // const current = this.state.current + 1;
+      // this.setState({ current });
     } else if (sessionStorage.getItem("markkey") === "2") {
       let walletpassword = {
         seed: importseed,
         password: pwd
       };
       console.log("恢复种子传入的参数：", walletpassword);
+      this.setState({
+        waitting: true
+      });
       provider.requestWithResponse("restorewallet", walletpassword, res => {
+        
         if (res.status === 200) {
+          const current = this.state.current + 1;
           this.setState({
-            walletseedpwd: res.data
+            walletseedpwd: res.data,
+            waitting: false,
+            current:current
           });
         } else {
           console.log(res);
           message.error("设置密码失败!");
         }
       });
-      const current = this.state.current + 1;
-      this.setState({ current });
     }
   }
   foucusResetInput() {
@@ -182,7 +196,7 @@ class LoginPageView extends Component {
 
     provider.requestWithResponse("loginwallet", loginpwd, res => {
       if (res.status === 200 && res.data === "success") {
-        provider.request("startcore");
+        // provider.request("startcore");
         provider.request("startwallet", loginpwd);
         provider.request("loginmainwindow");
       } else {
@@ -303,6 +317,7 @@ class LoginPageView extends Component {
     ];
     return (
       <div className="login-page">
+      <Spin spinning={this.state.waitting} style={{"height":"100%"}}>
         <div className="steps-content">{steps[current].content}</div>
         <div className="steps-action">
           {current === 3 && sessionStorage.getItem("markkey") === "1" && (
@@ -348,50 +363,9 @@ class LoginPageView extends Component {
               下一步
             </Button>
           )}
-          {/* {current === 5 && sessionStorage.getItem("markkey") === "1" && (
-            <Button onClick={() => this.prev()}>上一步</Button>
-          )}
-          {current === 5 && sessionStorage.getItem("markkey") === "2" && (
-            <Button onClick={() => this.prevsome()}>上一步</Button>
-          )}
-          {current === 7 && (
-            <Button onClick={() => this.prevtwo()}>上一步</Button>
-          )}
-          {current > 0 && current < 5 && (
-            <Button onClick={() => this.prev()}>上一步</Button>
-          )}
-          {current < 2 && (
-            <Button type="primary" onClick={() => this.next()}>
-              下一步
-            </Button>
-          )}
-          {current < steps.length - 2 && current > 3 && (
-            <Button type="primary" onClick={() => this.next()}>
-              下一步
-            </Button>
-          )}
-          {current === 3 && sessionStorage.getItem("markkey") === "2" && (
-            <Button type="primary" onClick={() => this.nextTwokey()}>
-              下一步
-            </Button>
-          )}
-          {current === 3 && sessionStorage.getItem("markkey") === "1" && (
-            <Button type="primary" onClick={() => this.nextKey()}>
-              下一步
-            </Button>
-          )}
-
-          {current === 6 && (
-            <Button type="primary" onClick={() => this.handleLogin()}>
-              登录
-            </Button>
-          )}
-          {current === 7 && (
-            <Button type="primary" onClick={() => this.nextSome()}>
-              下一步
-            </Button>
-          )} */}
+          
         </div>
+          </Spin>
       </div>
     );
   }

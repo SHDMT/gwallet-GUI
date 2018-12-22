@@ -7,12 +7,13 @@ import provider from "../../dataproviderclient";
 
 import "./layout.css";
 
+const defaultAccountIcon = "./imgs/default_account_icon.png";
 class AccountPanel extends Component {
   constructor(props) {
     super(props);
     this.state = {
       accountName: sessionStorage.getItem("account"),
-      accountAvatar: "./imgs/default_account_icon.png",
+      accountAvatar: defaultAccountIcon,
       hasNotification: false,
       showPasswordModal: false,
       showAddAccountModal: false,
@@ -43,6 +44,29 @@ class AccountPanel extends Component {
     );
   }
 
+  getAccountImage(){
+    let selectedAccount = sessionStorage.getItem("account");
+    for(let account of this.state.accounts){
+      if(account.name === selectedAccount){
+        return account.img;
+      }
+    }
+    return defaultAccountIcon;
+  }
+
+  componentDidMount() {
+    provider.requestWithResponse("listaccount", {}, res => {
+      if (res.status === 200) {
+        this.state.accounts = res.data;
+        let image = this.getAccountImage();
+        this.setState({
+          accountAvatar:image
+        });
+      } else {
+        console.log("ACCOUNT ERROR:", res.data);
+      }
+    });
+  }
   handleCloseWalletClick() {
     provider.request("closemainwindow");
   }
@@ -90,9 +114,11 @@ class AccountPanel extends Component {
   }
 
   handleChangeAccountOK() {
+    let image = this.getAccountImage();
     this.setState({
       accountName: sessionStorage.getItem("account"),
-      showChangeAccountModal: false
+      showChangeAccountModal: false,
+      accountAvatar: image
     });
   }
   handleChangeAccountCancel() {

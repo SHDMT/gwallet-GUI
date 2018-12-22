@@ -68,6 +68,7 @@ class ProcessManager {
         });
     }
 
+    //-- rescanWallet done !
     setNewWalletPassword(req, res) {
         let params = [
             { key: "create", value: null },
@@ -79,16 +80,18 @@ class ProcessManager {
                 response(res, "setnewwalletpassword", err, null);
                 return;
             }
-            exec(this.buildCommand(globalParams.walletBinary, params), (err, stdout, stderr) => {
-                if (err) {
-                    response(res, "setnewwalletpassword", err, null);
-                } else {
-                    try {
-                        let result = stdout.split("=======result>>>>>>>")[1].split("<<<<<<<result=======")[0]
-                    } catch (err) {
-                        response(res, "setnewwalletpassword", err, stdout);
-                    }
+            let walletProc = spawn((this.buildCommand(globalParams.walletBinary, params)), { shell: true });
+            
+            walletProc.stdout.on('data', (data) => {
+                let out = data.toString().trim();
+                console.log(out)
+                if(out.endsWith("---- rescanWallet done !")){
+                    response(res, "setnewwalletpassword", null, "success");
                 }
+            });
+            walletProc.stderr.on('data', (data) => {
+                console.log("error:", data);
+                // response(res, "restorewallet", data.toString(), null);
             });
         });
     }
@@ -105,17 +108,18 @@ class ProcessManager {
                 response(res, "restorewallet", err, null);
                 return;
             }
-            exec(this.buildCommand(globalParams.walletBinary, params), (err, stdout, stderr) => {
-                if (err) {
-                    response(res, "restorewallet", err, null);
-                } else {
-                    try {
-                        let result = stdout.split("=======result>>>>>>>")[1].split("<<<<<<<result=======")[0]
-                        console.log("restored wallet:", result);
-                    } catch (err) {
-                        response(res, "restorewallet", err, stdout);
-                    }
+            let walletProc = spawn((this.buildCommand(globalParams.walletBinary, params)), { shell: true });
+            
+            walletProc.stdout.on('data', (data) => {
+                let out = data.toString().trim();
+                console.log(out)
+                if(out.endsWith("---- rescanWallet done !")){
+                    response(res, "restorewallet", null, "success");
                 }
+            });
+            walletProc.stderr.on('data', (data) => {
+                console.log("error:", data);
+                // response(res, "restorewallet", data.toString(), null);
             });
         });
     }
